@@ -1,0 +1,173 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    <div id="content" class="site-content">
+        <div id="author" class="author wrapper">
+            <div class="box b2-radius author-header">
+                <form id="cover-image" class="mask-wrapper">
+                    {% csrf_token %}
+                    <div class="user-cover-button">
+                        <label class="empty button" for="cover-input">
+                            <i class="fa fa-file-image-o" aria-hidden="true"></i>
+                            <span>上传封面图片</span>
+                        </label>
+                        <input id="cover-input" type="file" class="b2-hidden-always"
+                               accept="image/jpg,image/jpeg,image/png,image/gif">
+                    </div>
+                </form>
+                <div class="user-panel">
+                    <div style="background-image: url(../../../media/image/users/gf/1ad9decd7e415b5041ca9e09338df138.jpg);"
+                         class="avatar">
+                        <label class="editor-avatar" for="avatar-input">
+                            <i class="b2font b2-image-fill "></i>
+                            <span>修改我的头像</span>
+                        </label>
+                        <input id="avatar-input" type="file" class="b2-hidden-always"
+                               accept="image/jpg,image/jpeg,image/png,image/gif">
+                    </div>
+                    <div class="user-panel-info">
+                        <div>
+                            <h1>
+                                <span id="userDisplayName">{{ profile.nickname }}</span>
+                            </h1>
+                            <p>这个人很懒，什么都没有留下！</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="author-table mg-t">
+                <div class="author-page-right">
+                    <div class="author-page-right-in box b2-radius">
+                        <div class="user-sidebar">
+                            <div class="user-sidebar-info ">
+                                <a href="https://www.s9h.cn/users/dByABkkjq" class="link-block"></a>
+                                <p>
+                                    <i class="fa fa-address-book" aria-hidden="true"></i>
+                                    概览
+                                </p>
+                                <div class="author-sidebar-down">
+                                    <i class="b2font b2-arrow-right-s-line "></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="user-sidebar">
+                            <div class="user-sidebar-info ">
+                                <a href="https://www.s9h.cn/users/dByABkkjq/post" class="link-block"></a>
+                                <p>
+                                    <i class="fa fa-retweet" aria-hidden="true"></i>
+                                    发布的
+                                </p>
+                                <div class="author-sidebar-down">
+                                    <i class="b2font b2-arrow-right-s-line "></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="user-sidebar">
+                            <div class="user-sidebar-info ">
+                                <a href="https://www.s9h.cn/users/dByABkkjq/following" class="link-block"></a>
+                                <p>
+                                    <i class="fa fa-wpexplorer" aria-hidden="true"></i>
+                                    关注
+                                </p>
+                                <div class="author-sidebar-down">
+                                    <i class="b2font b2-arrow-right-s-line "></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="user-sidebar">
+                            <div class="user-sidebar-info ">
+                                <a href="https://www.s9h.cn/users/dByABkkjq/followers" class="link-block"></a>
+                                <p>
+                                    <i class="fa fa-heart" aria-hidden="true"></i>
+                                    粉丝
+                                </p>
+                                <div class="author-sidebar-down">
+                                    <i class="b2font b2-arrow-right-s-line "></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="user-sidebar">
+                            <div class="user-sidebar-info ">
+                                <a href="https://www.s9h.cn/users/dByABkkjq/collections" class="link-block"></a>
+                                <p>
+                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                    收藏
+                                </p>
+                                <div class="author-sidebar-down">
+                                    <i class="b2font b2-arrow-right-s-line "></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div :class="'user-sidebar h0 '+(userData.admin || userData.self ? 'show' : '')" v-cloak>
+                            <div class="user-sidebar-info active">
+                                <a href="https://www.s9h.cn/users/dByABkkjq/settings" class="link-block"></a>
+                                <p>
+                                    <i class="b2font b2-settings-3-line b2-light b2-color "></i>
+                                    设置
+                                </p>
+                                <div class="author-sidebar-down">
+                                    <i class="b2font b2-arrow-right-s-line "></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="author-page-left">
+                    <div class="author-page">
+                        <form method="post" action="." id="author-edit-page" class="author-edit-page box b2-radius">
+                            {% csrf_token %}
+                                <h2>基本资料</h2>
+                            <ul class="author-edit-list">
+                                <li>
+                                    <div class="edit-name">昵称</div>
+                                    <div class="edit-item">
+                                        <div class="edit-value" v-if="!show.nickname">
+                                            <input type="text" name="nickname">
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="edit-name">性别</div>
+                                    <div class="edit-item">
+                                        <input class="myforms-3-2" type="text" name="sex">
+                                    </div>
+                                </li>
+                        <li>
+                        <div class="edit-name">简介</div>
+                        <div class="edit-item">
+                            <div class="edit-value">
+                                <textarea name='desc'></textarea>
+                            </div>
+                        </div>
+                    </li>
+                    </ul>
+                        <input type="submit" value="提交">
+                        </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+
+    <link rel="stylesheet" href="../../static/css/usercenter/style1.css">
+    <link rel="stylesheet" href="../../static/css/usercenter/style2.css">
+    <link rel="stylesheet" href="../../static/css/usercenter/filent.css">
+    <link rel="stylesheet" href="../../static/css/usercenter/dm.css">
+
+    <script>
+        var cover = document.getElementById('cover-image')
+        var inputElement = document.getElementById('cover-input')
+
+        inputElement.addEventListener("change", function () {
+            var file = this.files[0];
+            var reader = new FileReader();
+            reader.readAsDataURL(file);
+            reader.onload = function (e) {
+                cover.style.backgroundImage = e.target.result
+            }
+        })
+    </script>
+{% endblock %}

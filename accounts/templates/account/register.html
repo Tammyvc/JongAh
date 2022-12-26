@@ -1,0 +1,79 @@
+﻿{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div id="main">
+    <div class="main-content">
+        <div class="formDiv">
+
+            <h2 class="title text-center">注册</h2>
+
+            <form id="registerForm" role="form" class="form-horizontal " action="" method="post">
+                {% csrf_token %}
+                {% if message %}
+                    <div class="alert alert-warning">{{ message }}</div>
+                {% endif %}
+                <div class="form-item">
+                    <div class="input-warp">
+                        <span class="input-icon iconfont icon-email"></span><input id="userName" name="email"
+                                                                                   placeholder="邮箱" type="text"
+                                                                                   class="inputs" value=""/>
+                    </div>
+                    <p id="userNameErr" class="errMsg"></p>
+                </div>
+
+                <div class="form-item">
+                    <div class="input-warp">
+                        <span class="input-icon iconfont icon-user1"></span>
+                        <input id="kaptcha" name="username" placeholder="用户名" type="text" class="inputs" value=""/>
+                    </div>
+                    <p id="userNameErr" class="errMsg"></p>
+
+                </div>
+
+                <div class="form-item">
+                    <div class="input-warp">
+                        <span class="input-icon iconfont icon-baomi"></span>
+                        <input id="pwd" type="password" placeholder="至少6位字母或数字" maxlength="20" name="password1" value=""
+                               class="inputs"/>
+                    </div>
+                    <p id="passwordErr" class="errMsg"></p>
+                </div>
+
+                <div class="form-item">
+                    <div class="input-warp">
+                        <span class="input-icon iconfont icon-baomi"></span>
+                        <input id="repwd" type="password" placeholder="至少6位字母或数字" maxlength="20" name="password2"
+                               value=""
+                               class="inputs"/>
+                    </div>
+                    <p id="passwordErr2" class="errMsg"></p>
+                </div>
+
+                <div class="agreement gap">
+                        <input type="checkbox">
+                        <label>我已阅读并同意《<a href="" target="_blank" class="link">使用协议</a>》</label>
+                </div>
+
+                <div class="btn-warp">
+                    <div class="text-center">
+                        <button type="submit" id="btnSubmit" class="btn lgbtn blue btn-block btn-register">注册</button>
+                        <input id="appName" name="appName" type="hidden" value="jsform"/>
+                    </div>
+                </div>
+
+                <div class="agreement gap">
+                    <div class="text-right">
+                        <div class="pull-left">已有账号，<a href="{% url 'accounts:login' %}" class="link">登录</a></div>
+                        <div class="pull-right"><a href="{% url 'accounts:password_reset' %}" class="link">忘记密码?</a></div>
+
+                    </div>
+                </div>
+
+            </form>
+
+        </div>
+    </div>
+</div>
+
+{% endblock %}

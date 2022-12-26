@@ -1,0 +1,371 @@
+@CHARSET "UTF-8";
+* {
+    font-family: "微软雅黑", "Verdana", "宋体", "Lucida Grande", "Lucida Sans Unicode", Tahoma, sans-serif
+}
+
+@font-face {
+    font-family: 'myiconfont';
+    src: url('//at.alicdn.com/t/font_sbwy0o418twqaor.eot');
+    src: url('//at.alicdn.com/t/font_sbwy0o418twqaor.eot') format('embedded-opentype'), url('//at.alicdn.com/t/font_sbwy0o418twqaor.woff') format('woff'), url('//at.alicdn.com/t/font_sbwy0o418twqaor.ttf') format('truetype'), url('//at.alicdn.com/t/font_sbwy0o418twqaor.svg#iconfont') format('svg')
+}
+
+@keyframes fade-in {
+    0% {
+        opacity: 0
+    }
+    40% {
+        opacity: 0
+    }
+    100% {
+        opacity: 1
+    }
+}
+
+@-webkit-keyframes fade-in {
+    0% {
+        opacity: 0
+    }
+    40% {
+        opacity: 0
+    }
+    100% {
+        opacity: 1
+    }
+}
+
+.fade-in {
+    animation: fade-in;
+    animation-duration: 1.5s;
+    -webkit-animation: fade-in 1.5s
+}
+
+.fade-in {
+    animation: fade-in;
+    animation-duration: 1.5s;
+    -webkit-animation: fade-in 1.5s
+}
+
+@keyframes fade-out {
+    0% {
+        opacity: 1
+    }
+    40% {
+        opacity: .4
+    }
+    100% {
+        opacity: 0
+    }
+}
+
+@-webkit-keyframes fade-out {
+    0% {
+        opacity: 1
+    }
+    40% {
+        opacity: .4
+    }
+    100% {
+        opacity: 0
+    }
+}
+
+.fade-out {
+    animation: fade-out;
+    animation-duration: 1.5s;
+    -webkit-animation: fade-in 1.5s
+}
+
+.fade-out {
+    animation: fade-out;
+    animation-duration: 1.5s;
+    -webkit-animation: fade-in 1.5s
+}
+
+.modal-header {
+    border-bottom: 2px solid #f7f7f7;
+    margin-bottom: 10px;
+    padding: 0;
+    padding-bottom: 10px
+}
+
+.modal-header h3 {
+    color: #545454;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: normal;
+    clear: left;
+    margin: 0 0 5px
+}
+
+.dialog {
+    padding: 0 30px 30px 30px
+}
+
+.form-control {
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    -webkit-transition: none
+}
+
+.form-control:focus {
+    -webkit-box-shadow: none;
+    box-shadow: none
+}
+
+.input-group-addon {
+    color: #7b7b7b
+}
+
+a {
+    color: #00aed8;
+    text-decoration: none
+}
+
+a:hover {
+    color: #0d0c0c
+}
+
+a:focus, a:visited {
+    text-decoration: none
+}
+
+.has-error .input-group-addon {
+    color: #f0483e;
+    border-color: #f0483e
+}
+
+.has-error .form-control {
+    border-color: #f0483e;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075)
+}
+
+.has-error .form-control:focus {
+    border-color: #f0483e;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #f0483e;
+    box-shadow: 0 0 9px -2px #f0483e !important
+}
+
+.btn:active, .btn.active {
+    -webkit-box-shadow: none;
+    box-shadow: none
+}
+
+.btn > i {
+    margin-right: 3px
+}
+
+.btn.small {
+    padding: 2px 5px;
+    font-size: 100%
+}
+
+.btn.normal {
+    background: #f7f7f7;
+    border-color: #f7f7f7;
+    color: #999
+}
+
+.btn.normal:hover {
+    color: #545454;
+    border-color: #e9e9e9;
+    background: #e9e9e9
+}
+
+.pop-box .btn.small {
+    padding: 3px 17px;
+    font-size: 100%
+}
+
+.btn.gray, .btn.gray:ACTIVE {
+    background-color: #7f7f7f;
+    color: #fff;
+    border: 1px solid #7f7f7f
+}
+
+.btn.gray:HOVER {
+    background-color: #666;
+    border: 1px solid #666
+}
+
+.btn.blue, .btn.blue:ACTIVE {
+    background-color: #649efd;
+    color: #fff;
+    border: 1px solid #649efd
+}
+
+.btn.blue:HOVER {
+    background-color: #4c8ffc;
+    border: 1px solid #4c8ffc
+}
+
+.btn.red, .btn.red:ACTIVE {
+    background-color: #fd6860;
+    color: #fff;
+    border: 1px solid #fd6860
+}
+
+.btn.red:HOVER {
+    background-color: #fc5047;
+    border: 1px solid #fc5047
+}
+
+.btn.green, .btn.green:ACTIVE {
+    background-color: #00b16a;
+    color: #fff;
+    border: 1px solid #00b16a
+}
+
+.btn.green:HOVER {
+    background-color: #02965b;
+    border: 1px solid #02965b
+}
+
+.btn.green2, .btn.green2:ACTIVE {
+    background-color: #00aed6;
+    color: #fff;
+    border: 1px solid #00aed6
+}
+
+.btn.green2:HOVER {
+    background-color: #02a3c7;
+    border: 1px solid #02a3c7
+}
+
+.btn.black, .btn.black:ACTIVE {
+    background-color: #444;
+    color: #fff;
+    border: 1px solid #444
+}
+
+.btn.black:HOVER {
+    background-color: #333;
+    border: 1px solid #333
+}
+
+.btn.disabled, .btn.disabled:ACTIVE, .btn.disabled:HOVER {
+    color: #ccc;
+    border-radius: 2px;
+    background-color: #f7f7f7;
+    border: 1px solid #ccc;
+    cursor: default
+}
+
+.bold {
+    font-weight: bold
+}
+
+.hide {
+    display: none
+}
+
+.overlay {
+    background-color: #000;
+    height: 100%;
+    opacity: .5;
+    position: fixed;
+    _position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 8000
+}
+
+.lightbox {
+    left: 50%;
+    position: fixed;
+    _position: absolute;
+    text-align: left;
+    top: 30%;
+    width: 820px;
+    margin-left: -410px;
+    background: none repeat scroll 0 0 #fff;
+    z-index: 9999;
+    border-radius: 3px;
+    box-sizing: border-box;
+    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.3)
+}
+
+.lightbox.s {
+    width: 560px;
+    margin-left: -280px
+}
+
+.lightbox.ss {
+    width: 400px;
+    margin-left: -200px
+}
+
+.lightbox.l {
+    width: 1010px;
+    margin-left: -535px
+}
+
+.pop-box {
+    left: 50%;
+    position: fixed;
+    _position: absolute;
+    text-align: left;
+    top: 30%;
+    width: 350px;
+    margin-left: -175px;
+    background: none repeat scroll 0 0 #fff;
+    z-index: 10000;
+    border-radius: 3px;
+    box-sizing: border-box;
+    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.3)
+}
+
+.pop-box .title {
+    background-color: #f7f7f7;
+    height: 40px;
+    line-height: 40px;
+    border-radius: 3px 3px 0 0;
+    padding: 0 15px;
+    text-align: left;
+    cursor: move;
+    margin-top: 0
+}
+
+.pop-box .msg {
+    padding: 15px 15px 10px 15px;
+    text-indent: 2em;
+    display: block;
+    line-height: 25px
+}
+
+.pop-box .yes {
+    padding: 0 15px
+}
+
+.pop-box .yes input {
+    width: 100%;
+    box-sizing: border-box;
+    margin-top: 5px
+}
+
+.pop-box .btns {
+    padding-right: 25px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    text-align: right
+}
+
+.status {
+    bottom: 0;
+    right: 15%;
+    width: 350px;
+    min-height: 24px;
+    z-index: 10000;
+    position: fixed;
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid #c8dff3;
+    border-radius: 2px;
+    background-color: #deeefc;
+    color: #31708f
+}
+
+* html .status {
+    position: absolute !important
+}
+

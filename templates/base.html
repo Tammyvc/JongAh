@@ -1,0 +1,437 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="utf-8">
+    {% block title %}<title>JongAhLove</title>{% endblock %}
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="keywords" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700;900&display=swap"
+          rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,500;1,600;1,700&display=swap"
+          rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+
+    <link rel="stylesheet" href="../../static/assets/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="../../static/assets/css/jquery-ui.css">
+
+    <link rel="stylesheet" href="../../static/assets/css/jquery.fancybox.min.css">
+
+    <link rel="stylesheet" href="../../static/assets/css/ionicons.min.css">
+
+    <link rel="stylesheet" href="../../static/assets/css/ticker.min.css">
+
+    <link rel="stylesheet" href="../../static/assets/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="../../static/assets/css/owl.theme.default.min.css">
+
+    <link rel="stylesheet" href="../../static/assets/css/nav-style.css">
+
+    <link rel="stylesheet" href="../../static/assets/css/aos.css">
+    <link rel="stylesheet" href="../../static/assets/css/magnific-popup.css">
+
+    <link rel="stylesheet" href="../../static/assets/sliders/slider-1/fonts/pe-icon-7-stroke/css/pe-icon-7-stroke.css">
+
+    <link rel="stylesheet" href="../../static/assets/sliders/slider-1/css/rs6.css">
+
+    <link rel="stylesheet" href="../../static/assets/flat-font/flaticon.css">
+
+    <link rel="stylesheet" href="../../static/assets/css/style.css">
+
+{#    <link href="../../static/css/bootstrap.min.css" rel="stylesheet">#}
+{#    <link href="../../static/css/a3common.css" rel="stylesheet">#}
+    <link rel="stylesheet" href="../../static/css/login.css">
+    <link rel="stylesheet" href="../../static/css/font_43459_lbtux0zjkr6yldi.css">
+
+{#    <link rel="stylesheet" href="https://www.s9h.cn/wp-content/themes/b2/Assets/fontend/style.css?ver=4.1.7">#}
+{#    <link rel="stylesheet" href="https://www.s9h.cn/wp-content/themes/b2/style.css?ver=4.1.7">#}
+{#    <link rel="stylesheet" href="https://www.s9h.cn/wp-content/themes/b2child_S9/Assets/Css/fillet.css?ver=4.1.7">#}
+{#    <link rel="stylesheet" href="https://www.s9h.cn/wp-content/themes/b2child_S9/Assets/Css/dm.css?ver=4.1.7">#}
+
+
+    <link rel="shortcut icon" type="image/png" href="../../static/assets/img/favicon.png">
+</head>
+<body>
+
+<div id="preloader"></div>
+
+
+<button class="scroll-top scroll-to-target" data-target="html">
+    <i class="fa fa-chevron-circle-up" style="font-size:40px"></i>
+</button>
+
+
+<header class="header-area">
+    <div class="header-top">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-5 col-4">
+                    <div class="header-top-nav">
+                        <div class="side-ber">
+                            <div class="sidebar-btn">
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                            </div>
+                            <div class="search-box">
+                                <input class="search-txt" type="text" placeholder="请输入搜索关键词">
+                                <a class="search-btn" href="#">
+                                    <i class="flaticon-loupe"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-2 col-4">
+                    <div class="aubliy-logo">
+                        <img src="../../static/assets/img/Logo.png" alt="">
+                    </div>
+                </div>
+                <div class="col-md-5">
+                    <div class="h-social-links">
+                        <ul>
+                            <li><a href=""> <i class="fa fa-qq"></i></a></li>
+                            <li><a href=""> <i class="fa fa-weixin"></i></a></li>
+                            <li><a href=""> <i class="fa fa-weibo"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="aubliy-nav nav-fixed">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-md-12">
+                    <div class="menu-container">
+                        <div class="menu">
+                            <div class="sticky-logo">
+                                <img src="../../static/assets/img/Logo.png" alt="">
+                            </div>
+
+                            <!--导航栏-->
+                            <ul class="clearfix">
+                                <li class="no-dropdown"><a href="/index"><i class="fa fa-home"></i> 首页</a>
+                                </li>
+                                <li><a href="#"><i class="fa fa-file-text" aria-hidden="true"></i> 文章<i
+                                        class="fa fa-chevron-down"></i></a>
+                                    <ul>
+                                        <li class="frist-li">
+                                            <h3>目录</h3>
+                                            <ul>
+                                                <li><a href="#">我们结婚了</a></li>
+                                                <li><a href="#">History</a></li>
+                                                <li><a href="#">Locations</a></li>
+                                                <li><a href="#">Careers</a></li>
+                                            </ul>
+                                        </li>
+                                        <!--下拉分类-->
+                                        <li>
+                                            <div class="nav-single-blog">
+                                                <div class="nsb-img">
+                                                    <img src="../../static/assets/img/about/mega4.jpg" alt="">
+                                                </div>
+                                                <div class="nsb-text">
+                                                    <span>15 November 2020</span>
+                                                    <p>5 Ways to Bring the Best of Travel</p>
+                                                </div>
+                                            </div>
+                                            <div class="nav-single-blog">
+                                                <div class="nsb-img">
+                                                    <img src="../../static/assets/img/about/mega1.jpg" alt="">
+                                                </div>
+                                                <div class="nsb-text">
+                                                    <span>15 November 2020</span>
+                                                    <p>Our Complete Guide to the Best Fall</p>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="nav-single-blog">
+                                                <div class="nsb-img">
+                                                    <img src="../../static/assets/img/about/mega2.jpg" alt="">
+                                                </div>
+                                                <div class="nsb-text">
+                                                    <span>15 November 2020</span>
+                                                    <p>Longchamp Le Pliage 21″ Expandable Travel Bag</p>
+                                                </div>
+                                            </div>
+                                            <div class="nav-single-blog">
+                                                <div class="nsb-img">
+                                                    <img src="../../static/assets/img/about/mega3.jpg" alt="">
+                                                </div>
+                                                <div class="nsb-text">
+                                                    <span>15 November 2020</span>
+                                                    <p>The Wit & Delight Travel Guide</p>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li><a href="#"><i class="fa fa-video-camera" aria-hidden="true"></i> 视频<i
+                                        class="fa fa-chevron-down"></i></a>
+                                    <ul>
+                                        <li><a href="blog-post.html">Blog Post 01</a></li>
+                                        <li><a href="blog-post-2.html">Blog Post 02</a></li>
+                                        <li><a href="blog-post-3.html">Blog Post 03</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="#"><i class="fa fa-file-image-o" aria-hidden="true"></i>
+                                    图集<i class="fa fa-chevron-down"></i></a>
+                                    <ul>
+                                        <li><a href="category-1.html">Category 01</a></li>
+                                        <li><a href="category-2.html">Category 02</a></li>
+                                        <li><a href="category-3.html">Category 03</a></li>
+                                        <li><a href="category-4.html">Category 04</a></li>
+                                    </ul>
+                                </li>
+                                <li class="no-dropdown"><a href="/about"><i class="fa fa-exclamation-circle"
+                                                                            aria-hidden="true"></i>
+                                    关于我<i class="fas"></i></a>
+                                </li>
+                                <li class="no-dropdown"><a href="/contact"><i class="fa fa-envelope-open"
+                                                                              aria-hidden="true"></i>
+                                    联系我<i class="fas"></i></a>
+
+                                    {#<ul class="loginTop" id="logAndReg">#}
+                                    {% if not request.session.is_login %}
+                                        <li id="regis" class="no-dropdown"><a href="/register"><i
+                                                class="fa fa-user-circle"
+                                                aria-hidden="true"></i>
+                                            注册<i class="fas"></i></a>
+                                        <li id="log-in" class="no-dropdown"><a href="/login"><i class="fa fa-sign-in"
+                                                                                                aria-hidden="true"></i>
+                                            登录<i class="fas"></i></a>
+                                    {% else %}
+                                        <li class="user-center">
+                                           {######用户个人中心########}
+                                            <div class="top-user-info">
+                                                <div class="user-tools">
+                                                    <div class="top-user-box">
+                                                        <div id="username" class="top-user-avatar avatar-parent">
+                                                            <img class="avatar b2-radius"
+                                                                 src="">
+                                                        </div>
+                                                        <div id="user-settings"
+                                                             class="top-user-box-drop jt b2-radius show">
+                                                            <div class="top-user-info-box" v-if="role.user_data">
+                                                                <div class="top-user-info-box-name">
+                                                                    <img src="{% static 'images/01.png' %}" class="avatar b2-radius"/>
+                                                                    <div class="top-user-name">
+                                                                        <h2>Tammy</h2>
+                                                                    </div>
+
+                                                                </div>
+                                                                <div class="top-user-info-box-count"
+                                                                     v-if="role.user_data">
+                                                                    <p>
+                                                                        <span>文章</span>
+                                                                        <b></b>
+                                                                    </p>
+                                                                    <p>
+                                                                        <span>评论</span>
+                                                                        <b></b>
+                                                                    </p>
+                                                                    <p>
+                                                                        <span>关注</span>
+                                                                        <b></b>
+                                                                    </p>
+                                                                    <p>
+                                                                        <span>粉丝</span>
+                                                                        <b></b>
+                                                                    </p>
+                                                                    <a href="userData.link" class="link-block"
+                                                                       target="_blank"></a>
+                                                                </div>
+                                                            </div>
+                                                            <ul>
+{#                                                                <li>#}
+{#                                                                    <a href="{% url 'accounts:settings' request.session.user_name%}">#}
+{#                                                                        <i class="fa fa-bullseye" aria-hidden="true"></i>#}
+{#                                                                        <p>#}
+{#                                                                            个人中心#}
+{#                                                                        </p>#}
+{#                                                                    </a>#}
+{#                                                                </li>#}
+                                                                <li>
+                                                                    <a href="{% url 'accounts:user_edit' request.session.user_name%}">
+                                                                        <i class="fa fa-cog"></i>
+                                                                        <p>
+                                                                            我的设置
+                                                                        </p>
+                                                                    </a>
+                                                                </li>
+                                                                <li>
+                                                                    <a href="{% url 'accounts:logout' %}" class="log-out">
+                                                                        <i class="fa fa-sign-out"></i>
+                                                                        <p>
+                                                                            退出登录<span class="top-user-link-des"></span>
+                                                                        </p>
+                                                                    </a>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    {% endif %}
+
+
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<div class="side-panel hide">
+    <div class="sp-box">
+        <div class="sp-close">
+            <span class="close-sp"><i class="fa fa-times"></i></span>
+        </div>
+        <div class="sp-logo">
+            <a href="/index.html">
+            </a>
+        </div>
+        <div class="sp-text">
+            <h1>目录</h1>
+            <div class="sp-catagory">
+                <ul>
+                    <li>文章<span>105</span></li>
+                    <li>视频<span>105</span></li>
+                    <li>图集<span>105</span></li>
+                </ul>
+            </div>
+            <div class="social">
+                <p>通过下列方式联系我</p>
+                <ul>
+                    <li><a href=""><i class="fa fa-qq"></i></a></li>
+                    <li><a href=""><i class="fa fa-weixin"></i></a></li>
+                    <li><a href=""><i class="fa fa-weibo"></i></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+{% block content %}
+{% endblock %}
+
+
+
+<div class="footer-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3">
+                <div class="single-f-area">
+                    <img src="../../static/assets/img/Logo.png" alt="">
+                    <p>此网站主要是分享和自整理网络上有关宗亚夫妇两人的电视剧，综艺，照片等等。希望通过本站能有更多的小伙伴认识和喜欢他们。
+                    </p>
+
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="single-f-menu">
+                    <h5>博客</h5>
+                    <ul>
+                        <li><a href="{% url 'couple:index' %}">首页</a></li>
+                        <li><a href="{% url 'couple:about' %}">关于</a></li>
+                        <li><a href="{% url 'couple:contact' %}">联系我</a></li>
+                        <li><a href="/contact.html">订阅</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="single-f-menu">
+                    <h5>目录</h5>
+                    <ul>
+                        <li><a href="category-1.html">文章</a></li>
+                        <li><a href="category-2.html">视频</a></li>
+                        <li><a href="category-3.html">图集</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="single-f-menu single-f-menu2">
+                    <h5>订阅</h5>
+                    <p>宗亚夫妇分享站点</p>
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="E-mail" aria-label="Recipient's username"
+                               aria-describedby="basic-addon2">
+                        <div class="input-group-append">
+                            <span class="input-group-text" id="basic-addon2">订阅</span>
+                        </div>
+                    </div>
+                    <ul>
+                        <li><a href=""><i class="fa fa-qq"></i></a></li>
+                        <li><a href=""><i class="fa fa-weixin"></i></a></li>
+                        <li><a href=""><i class="fa fa-weibo"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<footer>
+    <div class="container">
+        <div class="footer-text">
+            <p>Copyright © 2022 JongAh.Love All Rights Reserved By </p>
+        </div>
+    </div>
+</footer>
+
+
+<script src="../../static/assets/js/jquery-3.6.0.min.js"></script>
+
+<script src="../../static/assets/js/bootstrap.min.js"></script>
+
+<script src="../../static/assets/js/aos.js"></script>
+
+<script src="../../static/assets/js/jquery-ui.js"></script>
+
+<script src="../../static/assets/js/nav-script.js"></script>
+
+<script src="../../static/assets/js/owl.carousel.min.js"></script>
+
+<script src="../../static/assets/sliders/slider-1/js/rbtools.min.js"></script>
+<script src="../../static/assets/sliders/slider-1/js/rs6.min.js"></script>
+<script src="../../static/assets/sliders/slider-1/js/slideractivation.js"></script>
+
+<script src="../../static/assets/js/jquery.fancybox.min.js"></script>
+<script src='../../static/assets/js/jquery.magnific-popup.min.js'></script>
+
+<script src="../../static/assets/js/theme.js"></script>
+
+<script src="https://myhkw.cn/api/player/167031491621" id="myhk" key="167031491621" m="1"></script>
+
+<script>
+    var user = document.getElementById('username');
+    var userSettings = document.getElementById('user-settings');
+    user.addEventListener("click", function () {
+        if (userSettings.style.display === 'block') {
+            userSettings.style.display = 'none';
+        } else {
+            userSettings.style.display = 'block';
+        }
+
+    });
+</script>
+</body>
+</html>
