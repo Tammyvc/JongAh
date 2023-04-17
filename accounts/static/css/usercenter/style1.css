@@ -211,7 +211,7 @@ img.lazy.loaded{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    font-size: 13px
+    font-size: 16px
 }
 .header-banner-content div.mobile-show{
     display: none;
@@ -229,9 +229,7 @@ img.lazy.loaded{
     align-items: center;
     white-space: nowrap;
 }
-.header-banner-left .menu li{
-    margin-right:26px
-}
+
 .post-style-2 .header-search-select a{
     color:#333!important
 }
@@ -256,9 +254,9 @@ img.lazy.loaded{
 .post-style-2 .header-banner-left .menu li.current-menu-item a:after{
     background-color: #fff;
 }
-.header-banner-left .menu li a i{
-    font-size: 16px;
-}
+/*.header-banner-left .menu li a i{*/
+/*    font-size: 16px;*/
+/*}*/
 .header-banner-left .menu li a:hover{
     opacity: 1;
     transition: opacity .2s ease-out;
@@ -299,11 +297,11 @@ img.lazy.loaded{
     position: relative;
     z-index: 2;
 }
-.header-user{
-    position: absolute;
-    right:0;
-    top: 12px;
-}
+/*.header-user{*/
+/*    position: absolute;*/
+/*    right:0;*/
+/*    top: 12px;*/
+/*}*/
 .header-login-button{
     display: flex;
     align-items: center
@@ -575,15 +573,16 @@ img.lazy.loaded{
     justify-content: space-between;
     align-items: center;
 }
-.top-search{
-    position: relative;
-}
-.top-search input{
-    padding: 8px 37px 8px 8px;
-    width: 150px;
-    background: none;
-    border:0
-}
+/*.top-search{*/
+/*    position: relative;*/
+/*}*/
+/*.top-search input{*/
+/*    padding: 8px 37px 8px 8px;*/
+/*    width: 150px;*/
+/*    background: none;*/
+/*    border:0*/
+/*}*/
+
 .top-search .header-search-select{
     position: absolute;
     display: flex;
@@ -6010,7 +6009,8 @@ code, kbd, tt, var {
     position: absolute!important;
     left:-80px;
     flex-flow: column;
-    top:80px;
+    top:0px;
+    bottom: 100px;
     padding-top:0;
     width:49px
 }
@@ -6075,7 +6075,7 @@ code, kbd, tt, var {
     margin-top: 14px;
     position: relative;
 }
-.post-tags-meat a{
+.post-tags-meat p{
     margin-right: 10px;
     font-size: 12px;
     display: flex;
@@ -6095,12 +6095,7 @@ code, kbd, tt, var {
 .post-tags-meat a span.tag-text{
     padding:0 5px 0 2px
 }
-.post-tags-meat a .tag-img{
-    padding: 3px;
-    border-radius: 100%;
-    background-color: #fff;
-    margin-right:5px
-}
+
 .tag-img b{
     width:16px;
     height:16px;
@@ -8929,8 +8924,9 @@ ul.children .comment-list .comment-footer button.text{
 .user-panel-info p svg{
     margin-right:5px
 }
-.user-panel-info h1 span{
-    margin-right:10px
+.user-nickname{
+    margin-right:10px;
+    margin-top: 20px;
 }
 .user-panel-editor-button{
     text-align: center;
@@ -8971,7 +8967,7 @@ ul.children .comment-list .comment-footer button.text{
 }
 
 .b2-radius {
-    border-radius: 15px;
+    border-radius: 2px;
 }
 
 .author-page-left{

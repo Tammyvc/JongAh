@@ -1,4 +1,5 @@
 ﻿{% load static %}
+{% load humanize %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -36,6 +37,8 @@
     <link rel="stylesheet" href="../../static/assets/css/owl.theme.default.min.css">
 
     <link rel="stylesheet" href="../../static/assets/css/nav-style.css">
+    <link rel="stylesheet" href="../../static/assets/fontend/style.css">
+
 
     <link rel="stylesheet" href="../../static/assets/css/aos.css">
     <link rel="stylesheet" href="../../static/assets/css/magnific-popup.css">
@@ -49,6 +52,23 @@
     <link rel="stylesheet" href="../../static/assets/css/style.css">
 
     <link rel="shortcut icon" type="image/png" href="../../static/assets/img/favicon.png">
+
+
+    <script src="../../static/revolutionjs/js/jquery-2.2.0.min.js"></script>
+
+    <!-- RS5.0 Core JS Files -->
+    <script src="../../static/revolutionjs/revolution/js/jquery.themepunch.tools.min.js?rev=5.0"></script>
+    <script src="../../static/revolutionjs/revolution/js/jquery.themepunch.revolution.min.js?rev=5.0"></script>
+    <script src="../../static/revolutionjs/revolution/js/extensions/revolution.extension.actions.min.js"></script>
+    <!--RS5.0 Extensions-->
+    <script src="../../static/revolutionjs/revolution/js/extensions/revolution.extension.video.min.js"></script>
+    <script src="../../static/revolutionjs/revolution/js/extensions/revolution.extension.slideanims.min.js"></script>
+    <script src="../../static/revolutionjs/revolution/js/extensions/revolution.extension.layeranimation.min.js"></script>
+    <script src="../../static/revolutionjs/revolution/js/extensions/revolution.extension.navigation.min.js"></script>
+
+
+    <!-- jQuery custom script -->
+    <script src="../../static/revolutionjs/js/custom.js"></script>
 </head>
 <body>
 
@@ -71,12 +91,6 @@
                                 <div></div>
                                 <div></div>
                                 <div></div>
-                            </div>
-                            <div class="search-box">
-                                <input class="search-txt" type="text" placeholder="请输入搜索关键词">
-                                <a class="search-btn" href="#">
-                                    <i class="flaticon-loupe"></i>
-                                </a>
                             </div>
                         </div>
                     </div>
@@ -102,122 +116,125 @@
         <div class="container">
             <div class="row">
                 <div class="col-12 col-md-12">
-                    <div class="menu-container">
-                        <div class="menu">
-                            <div class="sticky-logo">
-                                <img src="../../static/assets/img/Logo.png" alt="">
+                    <div class="header-banner-content wrapper">
+                        <div class="header-banner-left">
+                            <div class="menu">
+                                <!--导航栏-->
+                                <ul id="top-menu-ul" class="top-menu-ul">
+                                    <li class="depth-0">
+                                        <a href="/index"><i class="fa fa-home"></i> 首页</a>
+                                    </li>
+                                    <li class="current-menu-item depth-0  has_children b2-menu-3">
+                                        <a href="#">
+                                            <i class="fa fa-file-text" aria-hidden="true"></i>
+                                            <span class="hob" style="background-color:#607d8b"></span> 图文
+                                            <i class="fa fa-chevron-down"></i>
+                                        </a>
+                                        <ul class="sub-menu-0 sub-menu b2-radius">
+                                            <li>
+                                                <a href="/image-text/half-drama-half-you/">
+                                                    <span>一半是戏一半是你</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="/image-text/jongah-fellow/">
+                                                    <span>悠闲同人</span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li class="depth-0  has_children b2-menu-3">
+                                        <a href="#">
+                                            <i class="fa fa-video-camera" aria-hidden="true"></i>
+                                            <span class="hob">视频</span>
+                                            <i class="fa fa-chevron-down"></i>
+                                        </a>
+                                        <ul class="sub-menu-0 sub-menu b2-radius">
+                                            <li><a href="{% url  'couple:wgm_video' %}">我们结婚了</a></li>
+
+                                        </ul>
+                                    </li>
+                                    <li><a href="#"><i class="fa fa-file-image-o" aria-hidden="true"></i>
+                                        照片墙<i class="fa fa-chevron-down"></i></a>
+                                        <ul>
+                                            <li><a href="category-1.html">Category 01</a></li>
+                                            <li><a href="category-2.html">Category 02</a></li>
+                                            <li><a href="category-3.html">Category 03</a></li>
+                                            <li><a href="category-4.html">Category 04</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="no-dropdown"><a href="/about"><i class="fa fa-exclamation-circle"
+                                                                                aria-hidden="true"></i>
+                                        关于我<i class="fas"></i></a>
+                                    </li>
+                                    <li class="no-dropdown"><a href="/contact"><i class="fa fa-envelope-open"
+                                                                                  aria-hidden="true"></i>
+                                        联系我<i class="fas"></i></a>
+
+
+                                </ul>
                             </div>
-
-                            <!--导航栏-->
-                            <ul class="clearfix">
-                                <li class="no-dropdown"><a href="/index"><i class="fa fa-home"></i> 首页</a>
-                                </li>
-                                <li><a href="#"><i class="fa fa-file-text" aria-hidden="true"></i> 文章<i
-                                        class="fa fa-chevron-down"></i></a>
-                                    <ul>
-                                        <li class="frist-li">
-                                            <h3>目录</h3>
-                                            <ul>
-                                                <li><a href="#">我们结婚了</a></li>
-                                                <li><a href="#">History</a></li>
-                                                <li><a href="#">Locations</a></li>
-                                                <li><a href="#">Careers</a></li>
-                                            </ul>
-                                        </li>
-                                        <!--下拉分类-->
-                                        <li>
-                                            <div class="nav-single-blog">
-                                                <div class="nsb-img">
-                                                    <img src="../../static/assets/img/about/mega4.jpg" alt="">
-                                                </div>
-                                                <div class="nsb-text">
-                                                    <span>15 November 2020</span>
-                                                    <p>5 Ways to Bring the Best of Travel</p>
-                                                </div>
-                                            </div>
-                                            <div class="nav-single-blog">
-                                                <div class="nsb-img">
-                                                    <img src="../../static/assets/img/about/mega1.jpg" alt="">
-                                                </div>
-                                                <div class="nsb-text">
-                                                    <span>15 November 2020</span>
-                                                    <p>Our Complete Guide to the Best Fall</p>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="nav-single-blog">
-                                                <div class="nsb-img">
-                                                    <img src="../../static/assets/img/about/mega2.jpg" alt="">
-                                                </div>
-                                                <div class="nsb-text">
-                                                    <span>15 November 2020</span>
-                                                    <p>Longchamp Le Pliage 21″ Expandable Travel Bag</p>
-                                                </div>
-                                            </div>
-                                            <div class="nav-single-blog">
-                                                <div class="nsb-img">
-                                                    <img src="../../static/assets/img/about/mega3.jpg" alt="">
-                                                </div>
-                                                <div class="nsb-text">
-                                                    <span>15 November 2020</span>
-                                                    <p>The Wit & Delight Travel Guide</p>
-                                                </div>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li><a href="#"><i class="fa fa-video-camera" aria-hidden="true"></i> 视频<i
-                                        class="fa fa-chevron-down"></i></a>
-                                    <ul>
-                                        <li><a href="wgm/1.html">Blog Post 01</a></li>
-                                        <li><a href="blog-post-2.html">Blog Post 02</a></li>
-                                        <li><a href="blog-post-3.html">Blog Post 03</a></li>
-                                    </ul>
-                                </li>
-                                <li><a href="#"><i class="fa fa-file-image-o" aria-hidden="true"></i>
-                                    图集<i class="fa fa-chevron-down"></i></a>
-                                    <ul>
-                                        <li><a href="category-1.html">Category 01</a></li>
-                                        <li><a href="category-2.html">Category 02</a></li>
-                                        <li><a href="category-3.html">Category 03</a></li>
-                                        <li><a href="category-4.html">Category 04</a></li>
-                                    </ul>
-                                </li>
-                                <li class="no-dropdown"><a href="/about"><i class="fa fa-exclamation-circle"
-                                                                            aria-hidden="true"></i>
-                                    关于我<i class="fas"></i></a>
-                                </li>
-                                <li class="no-dropdown"><a href="/contact"><i class="fa fa-envelope-open"
-                                                                              aria-hidden="true"></i>
-                                    联系我<i class="fas"></i></a>
-
-                                    {#<ul class="loginTop" id="logAndReg">#}
+                        </div>
+                        <div class="header-banner-right">
+                            <div class="top-search mobile-hidden">
+                                <form method="get" action="https://www.wpdaxue.com"
+                                      class="mobile-search-input b2-radius">
+                                    <input type="text" name="s" autocomplete="off" placeholder="请输入关键词"
+                                           class="search-input b2-radius"> <input type="hidden" name="type"
+                                                                                  value="post">
+                                    <button class="search-button-action"><i class="fa fa-search" aria-hidden="true"></i>
+                                    </button>
+                                </form>
+                            </div>
+                            <div class="header-user">
+                                <div class="top-user-info">
                                     {% if not request.session.is_login %}
-                                        <li id="regis" class="no-dropdown"><a href="/register"><i
+                                        <li id="regis" class="no-dropdown register-index"><a href="/login"><i
                                                 class="fa fa-user-circle"
                                                 aria-hidden="true"></i>
-                                            注册<i class="fas"></i></a>
-                                        <li id="log-in" class="no-dropdown"><a href="/login"><i class="fa fa-sign-in"
-                                                                                                aria-hidden="true"></i>
                                             登录<i class="fas"></i></a>
-                                    {% else %}
+                                        <li id="log-in" class="no-dropdown"><a href="/register"><i
+                                                class="fa fa-sign-in"
+                                                aria-hidden="true"></i>
+                                            注册<i class="fas"></i></a>
+                                            {% else %}
                                         <li class="user-center">
                                             {######用户个人中心########}
                                             <div class="top-user-info">
                                                 <div class="user-tools">
                                                     <div class="top-user-box">
-                                                        <div id="username" class="top-user-avatar avatar-parent">
-                                                            <img class="avatar b2-radius"
-                                                                    src="{{ MEDIA_URL }}">
-                                                        </div>
+                                                        {% if not user.profile.photo %}
+                                                            <div id="username"
+                                                                 class="top-user-avatar avatar-parent">
+                                                                <img class="avatar b2-radius"
+                                                                     src="{{ MEDIA_URL }}/image/default/photo/1.png">
+                                                            </div>
+                                                        {% else %}
+                                                            <div id="username"
+                                                                 class="top-user-avatar avatar-parent">
+                                                                <img class="avatar b2-radius"
+                                                                     src="{{ MEDIA_URL }}/{{ user.profile.photo }}">
+                                                            </div>
+                                                        {% endif %}
                                                         <div id="user-settings"
-                                                             class="top-user-box-drop jt b2-radius show">
+                                                             class="top-user-box-drop jt b2-radius show"
+                                                             style="display: none;">
                                                             <div class="top-user-info-box" v-if="role.user_data">
                                                                 <div class="top-user-info-box-name">
-                                                                    <img src="{% static 'images/01.png' %}" class="avatar b2-radius"/>
+                                                                    {% if not user.profile.photo %}
+                                                                        <img src="{{ MEDIA_URL }}/image/default/photo/1.png"
+                                                                             class="avatar b2-radius"/>
+                                                                    {% else %}
+                                                                        <img class="avatar b2-radius"
+                                                                             src="{{ user.profile.photo.url }}">
+                                                                    {% endif %}
                                                                     <div class="top-user-name">
-                                                                        <h2>Tammy</h2>
+                                                                        <h3>{{ user.profile.nickname }}</h3>
+                                                                    </div>
+                                                                    <div data-title="退出登录"
+                                                                         class="login-out user-tips">
+                                                                        <a href="/logout/"><i
+                                                                                class="fa fa-sign-out"></i></a>
                                                                     </div>
 
                                                                 </div>
@@ -244,27 +261,29 @@
                                                                 </div>
                                                             </div>
                                                             <ul>
-{#                                                                <li>#}
-{#                                                                    <a href="{% url 'accounts:settings' request.session.user_name%}">#}
-{#                                                                        <i class="fa fa-bullseye" aria-hidden="true"></i>#}
-{#                                                                        <p>#}
-{#                                                                            个人中心#}
-{#                                                                        </p>#}
-{#                                                                    </a>#}
-{#                                                                </li>#}
+                                                                {#                                                                <li>#}
+                                                                {#                                                                    <a href="{% url 'accounts:settings' request.session.user_name%}">#}
+                                                                {#                                                                        <i class="fa fa-bullseye" aria-hidden="true"></i>#}
+                                                                {#                                                                        <p>#}
+                                                                {#                                                                            个人中心#}
+                                                                {#                                                                        </p>#}
+                                                                {#                                                                    </a>#}
+                                                                {#                                                                </li>#}
                                                                 <li>
-                                                                    <a href="{% url 'accounts:user_edit' request.session.user_name %}">
+                                                                    <a href="{% url 'accounts:user_center' request.session.user_name %}">
                                                                         <i class="fa fa-cog"></i>
                                                                         <p>
-                                                                            我的设置
+                                                                            个人中心
                                                                         </p>
                                                                     </a>
                                                                 </li>
                                                                 <li>
-                                                                    <a href="{% url 'accounts:logout' %}" class="log-out">
+                                                                    <a href="{% url 'accounts:logout' %}"
+                                                                       class="log-out">
                                                                         <i class="fa fa-sign-out"></i>
                                                                         <p>
-                                                                            退出登录<span class="top-user-link-des"></span>
+                                                                            退出登录<span
+                                                                                class="top-user-link-des"></span>
                                                                         </p>
                                                                     </a>
                                                                 </li>
@@ -275,9 +294,8 @@
                                             </div>
                                         </li>
                                     {% endif %}
-
-
-                            </ul>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -317,503 +335,585 @@
 </div>
 
 
-<div class="hero-area">
+<div class="b2-content">
 
-    <rs-module-wrap id="rev_slider_1_1_wrapper" data-source="gallery"
-                    style="background:transparent;padding:0;margin:0px auto;margin-top:0;margin-bottom:0;">
-        <rs-module id="rev_slider_1_1" data-version="6.3.9">
-            <rs-slides>
-                <rs-slide data-key="rs-1" data-title="Slide" data-thumb="../../../static/assets/hero_1-50x100.jpg"
-                          data-anim="ei:d;eo:d;s:d;r:default;t:slidehorizontal;sl:d;">
-                    <img src="../../../static/assets/img/window/yura_1.jpg" title="hero_1" width="1920" height="1040"
-                         class="rev-slidebg" data-no-retina>
+    <div id="primary-home" class="content-area">
 
-                    <rs-layer id="slider-1-slide-1-layer-0" data-type="text" data-color="#ffffff" data-rsp_ch="on"
-                              data-xy="x:355px;y:553px;" data-text="w:normal;s:18;l:28;fw:600;" data-dim="w:685.021px;"
-                              data-frame_0="y:100%;" data-frame_0_mask="u:t;" data-frame_1="sp:2000;"
-                              data-frame_1_mask="u:t;" data-frame_999="o:0;st:w;"
-                              style="z-index:11;font-family:Source Sans Pro;">Nunc non blandit massa enim nec. Metus
-                        dictum at tempor commodo ullamcorper Egestas congue quisque egestas diam in arcu.
-                    </rs-layer>
+        <div id="home-row-latest" class="have-widget  home_row home_row_0  module-posts  " style="">
+            <div class="index-wrapper">
+                <div id="main-content" class="home-row-left content-area ">
+                    <style>
+                        .post-item-latest ul.b2_gap > li .post-module-thumb {
+                            width: 240px;
+                            min-width: 240px;
+                        }
 
-                    <rs-layer id="slider-1-slide-1-layer-3" data-type="text" data-color="#ffffff" data-rsp_ch="on"
-                              data-xy="x:355px;y:151px;" data-text="w:normal;s:100;l:120;fw:700;" data-frame_0="o:1;"
-                              data-frame_0_chars="d:5;y:100%;o:0;rZ:-35deg;" data-frame_0_mask="u:t;"
-                              data-frame_1="sp:1200;" data-frame_1_chars="e:power4.inOut;d:10;rZ:0deg;"
-                              data-frame_1_mask="u:t;" data-frame_999="o:0;st:w;"
-                              style="z-index:8;font-family:Playfair Display;">Design
-                    </rs-layer>
+                        .post-item-latest .item-in .post-info h2 {
+                            -webkit-line-clamp: 1;
+                        }
 
-                    <rs-layer id="slider-1-slide-1-layer-4" data-type="text" data-color="#ffffff" data-rsp_ch="on"
-                              data-xy="x:355px;y:267px;" data-text="w:normal;s:100;l:120;fw:700;" data-frame_0="o:1;"
-                              data-frame_0_chars="d:5;y:100%;o:0;rZ:-35deg;" data-frame_0_mask="u:t;"
-                              data-frame_1="sp:1200;" data-frame_1_chars="e:power4.inOut;d:10;rZ:0deg;"
-                              data-frame_1_mask="u:t;" data-frame_999="o:0;st:w;"
-                              style="z-index:9;font-family:Playfair Display;">Inspiration
-                    </rs-layer>
+                        @media screen and (max-width: 720px) {
+                            .post-item-latest ul.b2_gap > li .post-module-thumb {
+                                width: 120px;
+                                min-width: 120px;
+                            }
 
-                    <rs-layer id="slider-1-slide-1-layer-5" data-type="text" data-color="#ffffff" data-rsp_ch="on"
-                              data-xy="x:355px;y:390px;" data-text="w:normal;s:100;l:120;fw:700;" data-frame_0="o:1;"
-                              data-frame_0_chars="d:5;y:100%;o:0;rZ:-35deg;" data-frame_0_mask="u:t;"
-                              data-frame_1="sp:1200;" data-frame_1_chars="e:power4.inOut;d:10;rZ:0deg;"
-                              data-frame_1_mask="u:t;" data-frame_999="o:0;st:w;"
-                              style="z-index:10;font-family:Playfair Display;">by Nature
-                    </rs-layer>
+                            .post-item-latest .item-in .post-info h2 {
+                                -webkit-line-clamp: 2;
+                            }
+                        }
 
-                    <a href="about-us.html">
-                        <rs-layer id="slider-1-slide-1-layer-6" class="rev-btn" data-type="button" data-color="#ffffff"
-                                  data-rsp_ch="on" data-xy="x:355px;y:654px;"
-                                  data-text="w:normal;s:16;l:48;fw:600;a:center;" data-dim="w:148px;h:48px;minh:0px;"
-                                  data-padding="r:25;l:25;"
-                                  data-border="bos:solid;boc:rgba(255,255,255,0.35);bow:1px,1px,1px,1px;"
-                                  data-frame_0="y:100%;" data-frame_0_mask="u:t;" data-frame_1="sp:2500;"
-                                  data-frame_1_mask="u:t;" data-frame_999="o:0;st:w;"
-                                  data-frame_hover="c:#282725;bgc:#fff;boc:rgba(255,255,255,0.75);bor:0px,0px,0px,0px;bos:solid;bow:1px,1px,1px,1px;e:power1.inOut;"
-                                  style="z-index:12;background-color:rgba(0,0,0,0);font-family:Source Sans Pro;">Read
-                            More
-                        </rs-layer>
-                    </a>
-
-                </rs-slide>
-                <rs-slide data-key="rs-3" data-title="Slide"
-                          data-thumb="../../../static/assets/heather-mount-5IyHNgYM-H8-unsplash-scaled-50x100.jpg"
-                          data-anim="ei:d,d;eo:d,d;s:d,d;r:default,default;t:slideleft,slideremoveleft;sl:d,d;">
-                    <img src="../../../static/assets/img/window/yura_2.jpg" title="heather-mount-5IyHNgYM-H8-unsplash"
-                         width="2560" height="1707" class="rev-slidebg" data-no-retina>
-
-                    <rs-layer id="slider-1-slide-3-layer-0" data-type="text" data-color="#ffffff" data-rsp_ch="on"
-                              data-xy="x:355px;y:537px;" data-text="w:normal;s:18;l:28;fw:600;" data-dim="w:685.021px;"
-                              data-frame_0="y:100%;" data-frame_0_mask="u:t;" data-frame_1="sp:2000;"
-                              data-frame_1_mask="u:t;" data-frame_999="o:0;st:w;"
-                              style="z-index:11;font-family:Source Sans Pro;">Nunc non blandit massa enim nec. Metus
-                        dictum at tempor commodo ullamcorper Egestas congue quisque egestas diam in arcu.
-                    </rs-layer>
-
-                    <rs-layer id="slider-1-slide-3-layer-3" data-type="text" data-color="#ffffff" data-rsp_ch="on"
-                              data-xy="x:355px;y:137px;" data-text="w:normal;s:100;l:120;fw:700;" data-frame_0="o:1;"
-                              data-frame_0_chars="d:5;y:100%;o:0;rZ:-35deg;" data-frame_0_mask="u:t;"
-                              data-frame_1="sp:1200;" data-frame_1_chars="e:power4.inOut;d:10;rZ:0deg;"
-                              data-frame_1_mask="u:t;" data-frame_999="o:0;st:w;"
-                              style="z-index:8;font-family:Playfair Display;">Design
-                    </rs-layer>
-
-                    <rs-layer id="slider-1-slide-3-layer-4" data-type="text" data-color="#ffffff" data-rsp_ch="on"
-                              data-xy="x:355px;y:249px;" data-text="w:normal;s:100;l:120;fw:700;" data-frame_0="o:1;"
-                              data-frame_0_chars="d:5;y:100%;o:0;rZ:-35deg;" data-frame_0_mask="u:t;"
-                              data-frame_1="sp:1200;" data-frame_1_chars="e:power4.inOut;d:10;rZ:0deg;"
-                              data-frame_1_mask="u:t;" data-frame_999="o:0;st:w;"
-                              style="z-index:9;font-family:Playfair Display;">Inspiration
-                    </rs-layer>
-
-                    <rs-layer id="slider-1-slide-3-layer-5" data-type="text" data-color="#ffffff" data-rsp_ch="on"
-                              data-xy="x:355px;y:372px;" data-text="w:normal;s:100;l:120;fw:700;" data-frame_0="o:1;"
-                              data-frame_0_chars="d:5;y:100%;o:0;rZ:-35deg;" data-frame_0_mask="u:t;"
-                              data-frame_1="sp:1200;" data-frame_1_chars="e:power4.inOut;d:10;rZ:0deg;"
-                              data-frame_1_mask="u:t;" data-frame_999="o:0;st:w;"
-                              style="z-index:10;font-family:Playfair Display;">by Nature
-                    </rs-layer>
-
-                    <a href="about-us.html">
-                        <rs-layer id="slider-1-slide-3-layer-6" class="rev-btn" data-type="button" data-color="#ffffff"
-                                  data-rsp_ch="on" data-xy="x:355px;y:634px;"
-                                  data-text="w:normal;s:16;l:48;fw:600;a:center;" data-dim="w:148px;h:48px;minh:0px;"
-                                  data-padding="r:25;l:25;"
-                                  data-border="bos:solid;boc:rgba(255,255,255,0.35);bow:1px,1px,1px,1px;"
-                                  data-frame_0="y:100%;" data-frame_0_mask="u:t;" data-frame_1="sp:2500;"
-                                  data-frame_1_mask="u:t;" data-frame_999="o:0;st:w;"
-                                  data-frame_hover="c:#282725;bgc:#fff;boc:rgba(255,255,255,0.75);bor:0px,0px,0px,0px;bos:solid;bow:1px,1px,1px,1px;e:power1.inOut;"
-                                  style="z-index:12;background-color:rgba(0,0,0,0);font-family:Source Sans Pro;">Read
-                            More
-                        </rs-layer>
-                    </a>
-
-                </rs-slide>
-                <rs-slide data-key="rs-4" data-title="Slide"
-                          data-thumb="../../../static/assets/zoltan-tasi-X75dTgoQ2Hs-unsplash-scaled-50x100.jpg"
-                          data-anim="ei:d,d;eo:d,d;s:d,d;r:default,default;t:slideleft,slideremoveleft;sl:d,d;">
-                    <img src="../../../static/assets/img/window/yura_3.jpg" title="zoltan-tasi-X75dTgoQ2Hs-unsplash"
-                         width="2560" height="1783" class="rev-slidebg" data-no-retina>
-
-                    <rs-layer id="slider-1-slide-4-layer-0" data-type="text" data-color="#ffffff" data-rsp_ch="on"
-                              data-xy="x:355px;y:537px;" data-text="w:normal;s:18;l:28;fw:600;" data-dim="w:685.021px;"
-                              data-frame_0="y:100%;" data-frame_0_mask="u:t;" data-frame_1="sp:2000;"
-                              data-frame_1_mask="u:t;" data-frame_999="o:0;st:w;"
-                              style="z-index:11;font-family:Source Sans Pro;">Nunc non blandit massa enim nec. Metus
-                        dictum at tempor commodo ullamcorper Egestas congue quisque egestas diam in arcu.
-                    </rs-layer>
-
-                    <rs-layer id="slider-1-slide-4-layer-3" data-type="text" data-color="#ffffff" data-rsp_ch="on"
-                              data-xy="x:355px;y:137px;" data-text="w:normal;s:100;l:120;fw:700;" data-frame_0="o:1;"
-                              data-frame_0_chars="d:5;y:100%;o:0;rZ:-35deg;" data-frame_0_mask="u:t;"
-                              data-frame_1="sp:1200;" data-frame_1_chars="e:power4.inOut;d:10;rZ:0deg;"
-                              data-frame_1_mask="u:t;" data-frame_999="o:0;st:w;"
-                              style="z-index:8;font-family:Playfair Display;">Design
-                    </rs-layer>
-
-                    <rs-layer id="slider-1-slide-4-layer-4" data-type="text" data-color="#ffffff" data-rsp_ch="on"
-                              data-xy="x:355px;y:249px;" data-text="w:normal;s:100;l:120;fw:700;" data-frame_0="o:1;"
-                              data-frame_0_chars="d:5;y:100%;o:0;rZ:-35deg;" data-frame_0_mask="u:t;"
-                              data-frame_1="sp:1200;" data-frame_1_chars="e:power4.inOut;d:10;rZ:0deg;"
-                              data-frame_1_mask="u:t;" data-frame_999="o:0;st:w;"
-                              style="z-index:9;font-family:Playfair Display;">Inspiration
-                    </rs-layer>
-
-                    <rs-layer id="slider-1-slide-4-layer-5" data-type="text" data-color="#ffffff" data-rsp_ch="on"
-                              data-xy="x:355px;y:372px;" data-text="w:normal;s:100;l:120;fw:700;" data-frame_0="o:1;"
-                              data-frame_0_chars="d:5;y:100%;o:0;rZ:-35deg;" data-frame_0_mask="u:t;"
-                              data-frame_1="sp:1200;" data-frame_1_chars="e:power4.inOut;d:10;rZ:0deg;"
-                              data-frame_1_mask="u:t;" data-frame_999="o:0;st:w;"
-                              style="z-index:10;font-family:Playfair Display;">by Nature
-                    </rs-layer>
-
-                    <a href="about-us.html">
-                        <rs-layer id="slider-1-slide-4-layer-6" class="rev-btn" data-type="button" data-color="#ffffff"
-                                  data-rsp_ch="on" data-xy="x:355px;y:634px;"
-                                  data-text="w:normal;s:16;l:48;fw:600;a:center;" data-dim="w:148px;h:48px;minh:0px;"
-                                  data-padding="r:25;l:25;"
-                                  data-border="bos:solid;boc:rgba(255,255,255,0.35);bow:1px,1px,1px,1px;"
-                                  data-frame_0="y:100%;" data-frame_0_mask="u:t;" data-frame_1="sp:2500;"
-                                  data-frame_1_mask="u:t;" data-frame_999="o:0;st:w;"
-                                  data-frame_hover="c:#282725;bgc:#fff;boc:rgba(255,255,255,0.75);bor:0px,0px,0px,0px;bos:solid;bow:1px,1px,1px,1px;e:power1.inOut;"
-                                  style="z-index:12;background-color:rgba(0,0,0,0);font-family:Source Sans Pro;">Read
-                            More
-                        </rs-layer>
-                    </a>
-
-                </rs-slide>
-            </rs-slides>
-        </rs-module>
-    </rs-module-wrap>
-
-</div>
-
-
-<div class="features-post" data-aos="fade-up" data-aos-duration="1500">
-    <div class="container">
-        <h2>Featured Posts</h2>
-        <div class="blog-slider  owl-carousel owl-theme">
-            <div class="item">
-                <div class="row">
-                    <div class="col-md-7">
-                        <div class="single-blog">
-                            <div class="sb-img">
-                                <img src="../../static/assets/img/blog/blog1.jpg" alt="">
-                                <div class="blog-tag">
-                                    <span>23 February, 2020</span>
-                                    <span class="span2"><i class="flaticon-heart"></i> 20k</span>
+                    </style>
+                    <div class=" post-3 post-list post-item-latest box b2-radius" id="post-item-latest"
+                         data-key="latest" data-i="1">
+                        <div class="post-modules-top  ">
+                            <div class="modules-title-box"><h2 class="module-title">最新文章</h2></div>
+                            <div class="post-list-cats post-list-cats-has-title" style="">
+                                <div class="post-carts-list-row">
+                                    <a
+                                            class="cat-list post-load-button post-load-button-more"
+                                            href="{% url 'couple:latest' %}" target="_blank"><span
+                                            data-type="cat">更多<i
+                                            class="b2font b2-arrow-right-s-line "></i></span></a>
                                 </div>
-                            </div>
-                            <div class="sb-text">
-                                <span>Travels</span>
-                                <a href="wgm/1.html">
-                                    <h2>Way Winter Is Prefect Times For Traveling</h2>
-                                </a>
-                                <ul>
-                                    <li><a href=""><i class="flaticon-visibility"></i> 02 Comment</a></li>
-                                    <li><a href=""><i class="flaticon-chat"></i> 30k View</a></li>
-                                </ul>
                             </div>
                         </div>
+                        <div class="hidden-line">
+                            <ul class="b2_gap">
+                                {% for post in posts %}
+                                    <li class="post-3-li post-list-item" id="item-133181">
+                                        <div class="item-in ">
+                                            <div class="post-module-thumb mobile-hidden" style="">
+                                                <div style="padding-top:66.666667%" class="b2-radius">
+
+                                                    <a href="{% url 'couple:post_detail' category_name=post.category.slug post_slug=post.slug %}"
+                                                       rel="nofollow" class="thumb-link">
+                                                        <picture class="picture">
+                                                            <source type="image/webp"
+                                                                    data-lazy-srcset="https://www.wpdaxue.com/img/thumb/2023/02/fill_w480_h320_g0_mark_whats-coming-in-wordpress-6-2-beta.webp"/>
+                                                            <img class="post-thumb" alt="WordPress 6.2（测试版）的新功能和改进"
+                                                                 src="{{ post.image.url }}"/>
+                                                            <noscript><img class="post-thumb"
+                                                                           alt="WordPress 6.2（测试版）的新功能和改进"
+                                                                           src="https://www.wpdaxue.com/img/thumb/2023/02/fill_w480_h320_g0_mark_whats-coming-in-wordpress-6-2-beta.jpg"/>
+                                                            </noscript>
+                                                        </picture>
+                                                    </a>
+                                                </div>
+                                            </div>
+
+                                            <div class="post-info">
+                                                <div>
+                                                    <div class="post-list-cat  b2-radius">
+                                                        <a class="post-list-cat-item b2-radius"
+                                                           href="{{ post.category.get_absolute_url }}"
+                                                           style="color:#34a85e">
+                                                            {{ post.category.name }}</a></div>
+                                                </div>
+                                                <h2>
+                                                    <a href="{{ post.get_absolute_url }}">{{ post.title }}</a>
+                                                </h2>
+                                                <div class="post-excerpt">
+                                                    {{ post.desc }}
+                                                </div>
+
+                                                {#文章相关属性#}
+                                                <div class="post-list-meta-box ">
+                                                    <ul class="post-list-meta">
+
+                                                        <li class="post-list-meta-date">
+                                                            <span>{{ post.created_time|natural_time }}</span>
+                                                        </li>
+                                                        <li class="post-list-meta-like"><span><i
+                                                                class="fa fa-thumbs-o-up"
+                                                                aria-hidden="true"></i>{{ post.likes }}</span></li>
+                                                        <li class="post-list-meta-comment"><span><i
+                                                                class="fa fa-comment"
+                                                                aria-hidden="true"></i>{{ post.comment.count }}</span>
+                                                        </li>
+                                                        <li class="post-list-meta-view"><span><i class="fa fa-eye"
+                                                                                                 aria-hidden="true"></i>{{ post.views }}</span>
+                                                        </li>
+
+                                                    </ul>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                        <div data-showbutton="1" class="load-more">
+                            <button class="empty post-load-button"><span>加载更多</span></button>
+                        </div>
+
                     </div>
-                    <div class="col-md-5">
-                        <div class="single-blog">
-                            <div class="sb-img">
-                                <img src="../../static/assets/img/blog/blog2.jpg" alt="">
-                                <div class="blog-tag">
-                                    <span>23 February, 2020</span>
-                                    <span class="span2"><i class="flaticon-heart"></i> 20k</span>
+                </div>
+                <div id="sidebar" class="widget-area">
+                    <div class="sidebar">
+                        <div class="sidebar-innter widget-ffixed">
+                            <section id="b2-widget-newsflashes-4"
+                                     class="mobile-hidden widget b2-widget-newsflashes box b2-radius">
+                                <div class="b2-widget-title"><h2 class="widget-title">快讯</h2></div>
+                                <div class="b2-widget-box">
+                                    <div class="widget-newsflashes-box" ref="newsWidget"
+                                         data-json='{"posts_per_page":4,"orderby":"desc","s_order":"new"}'>
+                                        <ul>
+                                            <div ref="gujia">
+                                                <li class="widget-news-gujia">
+
+                                                    <div class="widget-new-content">
+                                                        <h2 class="anhover"></h2>
+                                                        <div class="widget-new-header">
+                                                            <span class="widget-news-user"></span>
+                                                            <span></span>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                <li class="widget-news-gujia">
+
+                                                    <div class="widget-new-content">
+                                                        <h2 class="anhover"></h2>
+                                                        <div class="widget-new-header">
+                                                            <span class="widget-news-user"></span>
+                                                            <span></span>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                <li class="widget-news-gujia">
+
+                                                    <div class="widget-new-content">
+                                                        <h2 class="anhover"></h2>
+                                                        <div class="widget-new-header">
+                                                            <span class="widget-news-user"></span>
+                                                            <span></span>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                <li class="widget-news-gujia">
+
+                                                    <div class="widget-new-content">
+                                                        <h2 class="anhover"></h2>
+                                                        <div class="widget-new-header">
+                                                            <span class="widget-news-user"></span>
+                                                            <span></span>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                            </div>
+                                            <div v-show="list !== ''" v-cloak>
+                                                <li v-for="item in list">
+                                                    <div class="widget-new-content">
+                                                        <h2 class="anhover"><span class="ps"><a :href="item.link"
+                                                                                                target="_blank"><b
+                                                                v-html="item.title"></b></a></span></h2>
+                                                        <div class="widget-new-header">
+									<span class="widget-news-user">
+										<a :href="item.tag.link"><b v-text="item.tag.name"></b></a>
+										<a :href="item.author.link" target="_blank">作者：<b v-html="item.author.name"></b></a>
+									</span>
+                                                            <span class="ps1" v-html="item.date.time"></span>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                            </div>
+                                        </ul>
+                                        <div class="widget-mission-footer"><a
+                                                href="https://www.wpdaxue.com/newsletter" target="_blank">全部快讯</a>
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="sb-text">
-                                <span>Life Style</span>
-                                <a href="blog-post-2.html">
-                                    <h3>How We're Styling Our Favorite Trends Of 2020</h3>
-                                </a>
-                                <ul>
-                                    <li><a href=""><i class="flaticon-visibility"></i> 02 Comment</a></li>
-                                    <li><a href=""><i class="flaticon-chat"></i> 30k View</a></li>
-                                </ul>
-                            </div>
+                            </section>
+                            <section id="b2-widget-mission-2"
+                                     class="mobile-hidden widget b2-widget-mission box b2-radius">
+                                <div class="b2-widget-box">
+                                    <div class="mission-widget" ref="missionWidget" data-count="4">
+                                        <div class="mission-gujia" ref="missiongujia">
+                                            <div class="user-w-qd">
+                                                <div class=""></div>
+                                            </div>
+                                            <div class="user-w-qd-list">
+                                                <div class="user-w-qd-list-title b2-radius">
+                                                    <p><span></span></p>
+                                                    <p><span></span></p>
+                                                </div>
+                                                <div class="mission-today-list">
+                                                    <ul>
+
+                                                        <li>
+                                                            <a href="#"
+                                                               class="user-link-block avatar-parent"><span></span></a>
+                                                            <div class="user-mission-info">
+                                                                <div class="user-mission-info-left">
+                                                                    <a href="#"><p></p></a>
+                                                                    <p>
+                                                                        <time></time>
+                                                                    </p>
+                                                                </div>
+                                                                <div class="user-mission-info-right">
+                                                                    <span class="user-credit"></span>
+                                                                </div>
+                                                            </div>
+                                                        </li>
+
+                                                        <li>
+                                                            <a href="#"
+                                                               class="user-link-block avatar-parent"><span></span></a>
+                                                            <div class="user-mission-info">
+                                                                <div class="user-mission-info-left">
+                                                                    <a href="#"><p></p></a>
+                                                                    <p>
+                                                                        <time></time>
+                                                                    </p>
+                                                                </div>
+                                                                <div class="user-mission-info-right">
+                                                                    <span class="user-credit"></span>
+                                                                </div>
+                                                            </div>
+                                                        </li>
+
+                                                        <li>
+                                                            <a href="#"
+                                                               class="user-link-block avatar-parent"><span></span></a>
+                                                            <div class="user-mission-info">
+                                                                <div class="user-mission-info-left">
+                                                                    <a href="#"><p></p></a>
+                                                                    <p>
+                                                                        <time></time>
+                                                                    </p>
+                                                                </div>
+                                                                <div class="user-mission-info-right">
+                                                                    <span class="user-credit"></span>
+                                                                </div>
+                                                            </div>
+                                                        </li>
+
+                                                        <li>
+                                                            <a href="#"
+                                                               class="user-link-block avatar-parent"><span></span></a>
+                                                            <div class="user-mission-info">
+                                                                <div class="user-mission-info-left">
+                                                                    <a href="#"><p></p></a>
+                                                                    <p>
+                                                                        <time></time>
+                                                                    </p>
+                                                                </div>
+                                                                <div class="user-mission-info-right">
+                                                                    <span class="user-credit"></span>
+                                                                </div>
+                                                            </div>
+                                                        </li>
+
+                                                    </ul>
+
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <section id="b2-widget-hot-4"
+                                                 class="mobile-hidden widget b2-widget-hot box b2-radius">
+                                            <div class="b2-widget-title"><h2 class="widget-title">近期热门</h2></div>
+                                            <div class="b2-widget-box">
+                                                <ul class="b2-widget-list-ul">
+                                                    <li class="b2-widget-box widget-post widget-post-small">
+                                                        <div class="b2-widget-post-order widget-order-1"><span
+                                                                class="b2-radius">TOP1</span></div>
+                                                        <div class="b2-widget-post-thumb b2-radius">
+                                                            <div class="b2-widget-post-thumb-img">
+                                                                <picture class="picture">
+                                                                    <source type="image/webp"
+                                                                            data-lazy-srcset="https://www.wpdaxue.com/img/thumb/2023/01/fill_w100_h62_g0_mark_supplementary-offering-letter-2-with-pictures.webp"/>
+                                                                    <img class="b2-radius" alt="《独立站不求人计划》，是如何帮你的？"
+                                                                         src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E"
+                                                                         data-lazy-src="https://www.wpdaxue.com/img/thumb/2023/01/fill_w100_h62_g0_mark_supplementary-offering-letter-2-with-pictures.jpeg"/>
+                                                                    <noscript><img class="b2-radius"
+                                                                                   alt="《独立站不求人计划》，是如何帮你的？"
+                                                                                   src="https://www.wpdaxue.com/img/thumb/2023/01/fill_w100_h62_g0_mark_supplementary-offering-letter-2-with-pictures.jpeg"/>
+                                                                    </noscript>
+                                                                </picture>
+                                                            </div>
+                                                            <div class="b2-widget-post-title">
+                                                                <h2>《独立站不求人计划》，是如何帮你的？</h2>
+                                                                <time class="b2timeago"
+                                                                      datetime="2023-01-11 9:56:45"
+                                                                      itemprop="datePublished">1月11日
+                                                                </time>
+                                                            </div>
+                                                        </div>
+                                                        <a ref="nofollow" class="link-overlay"
+                                                           href="https://www.wpdaxue.com/20230111.html"></a>
+                                                    </li>
+                                                    <li class="b2-widget-box widget-post widget-post-small">
+                                                        <div class="b2-widget-post-order widget-order-2"><span
+                                                                class="b2-radius">TOP2</span></div>
+                                                        <div class="b2-widget-post-thumb b2-radius">
+                                                            <div class="b2-widget-post-thumb-img">
+                                                                <picture class="picture">
+                                                                    <source type="image/webp"
+                                                                            data-lazy-srcset="https://www.wpdaxue.com/img/thumb/2023/02/fill_w100_h62_g0_mark_WordPress-heartbeat-api-1024x537-1.webp"/>
+                                                                    <img class="b2-radius"
+                                                                         alt="如何管理 WordPress Heartbeat API"
+                                                                         src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E"
+                                                                         data-lazy-src="https://www.wpdaxue.com/img/thumb/2023/02/fill_w100_h62_g0_mark_WordPress-heartbeat-api-1024x537-1.png"/>
+                                                                    <noscript><img class="b2-radius"
+                                                                                   alt="如何管理 WordPress Heartbeat API"
+                                                                                   src="https://www.wpdaxue.com/img/thumb/2023/02/fill_w100_h62_g0_mark_WordPress-heartbeat-api-1024x537-1.png"/>
+                                                                    </noscript>
+                                                                </picture>
+                                                            </div>
+                                                            <div class="b2-widget-post-title">
+                                                                <h2>如何管理 WordPress Heartbeat API</h2>
+                                                                <time class="b2timeago"
+                                                                      datetime="2023-02-01 18:14:30"
+                                                                      itemprop="datePublished">2月1日
+                                                                </time>
+                                                            </div>
+                                                        </div>
+                                                        <a ref="nofollow" class="link-overlay"
+                                                           href="https://www.wpdaxue.com/manage-the-wordpress-heartbeat-api.html"></a>
+                                                    </li>
+                                                    <li class="b2-widget-box widget-post widget-post-small">
+                                                        <div class="b2-widget-post-order widget-order-3"><span
+                                                                class="b2-radius">TOP3</span></div>
+                                                        <div class="b2-widget-post-thumb b2-radius">
+                                                            <div class="b2-widget-post-thumb-img">
+                                                                <picture class="picture">
+                                                                    <source type="image/webp"
+                                                                            data-lazy-srcset="https://www.wpdaxue.com/img/thumb/2023/01/fill_w100_h62_g0_mark_2023-01-03-092928-.webp"/>
+                                                                    <img class="b2-radius"
+                                                                         alt="WordPress 块样板是什么，如何使用它？"
+                                                                         src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E"
+                                                                         data-lazy-src="https://www.wpdaxue.com/img/thumb/2023/01/fill_w100_h62_g0_mark_2023-01-03-092928-.jpg"/>
+                                                                    <noscript><img class="b2-radius"
+                                                                                   alt="WordPress 块样板是什么，如何使用它？"
+                                                                                   src="https://www.wpdaxue.com/img/thumb/2023/01/fill_w100_h62_g0_mark_2023-01-03-092928-.jpg"/>
+                                                                    </noscript>
+                                                                </picture>
+                                                            </div>
+                                                            <div class="b2-widget-post-title">
+                                                                <h2>WordPress 块样板是什么，如何使用它？</h2>
+                                                                <time class="b2timeago"
+                                                                      datetime="2023-01-03 9:44:23"
+                                                                      itemprop="datePublished">1月3日
+                                                                </time>
+                                                            </div>
+                                                        </div>
+                                                        <a ref="nofollow" class="link-overlay"
+                                                           href="https://www.wpdaxue.com/wordpress-block-patterns-2.html"></a>
+                                                    </li>
+                                                    <li class="b2-widget-box widget-post widget-post-small">
+
+                                                        <div class="b2-widget-post-thumb b2-radius">
+                                                            <div class="b2-widget-post-thumb-img">
+                                                                <picture class="picture">
+                                                                    <source type="image/webp"
+                                                                            data-lazy-srcset="https://www.wpdaxue.com/img/thumb/2023/01/fill_w100_h62_g0_mark_supplementary-offering-letter-1-with-pictures.webp"/>
+                                                                    <img class="b2-radius" alt="《独立站不求人计划》进展报告"
+                                                                         src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E"
+                                                                         data-lazy-src="https://www.wpdaxue.com/img/thumb/2023/01/fill_w100_h62_g0_mark_supplementary-offering-letter-1-with-pictures.jpeg"/>
+                                                                    <noscript><img class="b2-radius"
+                                                                                   alt="《独立站不求人计划》进展报告"
+                                                                                   src="https://www.wpdaxue.com/img/thumb/2023/01/fill_w100_h62_g0_mark_supplementary-offering-letter-1-with-pictures.jpeg"/>
+                                                                    </noscript>
+                                                                </picture>
+                                                            </div>
+                                                            <div class="b2-widget-post-title">
+                                                                <h2>《独立站不求人计划》进展报告</h2>
+                                                                <time class="b2timeago"
+                                                                      datetime="2023-01-10 20:14:34"
+                                                                      itemprop="datePublished">1月10日
+                                                                </time>
+                                                            </div>
+                                                        </div>
+                                                        <a ref="nofollow" class="link-overlay"
+                                                           href="https://www.wpdaxue.com/20230110.html"></a>
+                                                    </li>
+                                                    <li class="b2-widget-box widget-post widget-post-small">
+
+                                                        <div class="b2-widget-post-thumb b2-radius">
+                                                            <div class="b2-widget-post-thumb-img">
+                                                                <picture class="picture">
+                                                                    <source type="image/webp"
+                                                                            data-lazy-srcset="https://www.wpdaxue.com/img/thumb/2020/08/fill_w100_h62_g0_mark_Managed-WordPress-Hosting.webp"/>
+                                                                    <img class="b2-radius"
+                                                                         alt="BuddyPress 11.0.0 添加过滤器以改进 JS 和 CSS 资产加载、WebP 支持以及获取活动的新方法"
+                                                                         src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E"
+                                                                         data-lazy-src="https://www.wpdaxue.com/img/thumb/2020/08/fill_w100_h62_g0_mark_Managed-WordPress-Hosting.jpg"/>
+                                                                    <noscript><img class="b2-radius"
+                                                                                   alt="BuddyPress 11.0.0 添加过滤器以改进 JS 和 CSS 资产加载、WebP 支持以及获取活动的新方法"
+                                                                                   src="https://www.wpdaxue.com/img/thumb/2020/08/fill_w100_h62_g0_mark_Managed-WordPress-Hosting.jpg"/>
+                                                                    </noscript>
+                                                                </picture>
+                                                            </div>
+                                                            <div class="b2-widget-post-title">
+                                                                <h2>BuddyPress 11.0.0 添加过滤器以改进 JS 和 CSS 资产加载、WebP
+                                                                    支持以及获取活动的新方法</h2>
+                                                                <time class="b2timeago"
+                                                                      datetime="2023-01-07 8:54:08"
+                                                                      itemprop="datePublished">1月7日
+                                                                </time>
+                                                            </div>
+                                                        </div>
+                                                        <a ref="nofollow" class="link-overlay"
+                                                           href="https://www.wpdaxue.com/buddypress-11-0-0.html"></a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </section>
+                                        <section id="b2-widget-comment-5"
+                                                 class="mobile-hidden widget b2-widget-comment box b2-radius">
+                                            <div class="b2-widget-title"><h2 class="widget-title">最新评论</h2></div>
+                                            <div class="comment-widget-nav"><span :class="{'locked':prev || locked}"
+                                                                                  @click="prevAc()"><i
+                                                    class="b2font b2-arrow-left-s-line "></i>PREV</span><span
+                                                    :class="{'locked':next || locked}" @click="nexAc()">NEXT<i
+                                                    class="b2font b2-arrow-right-s-line "></i></span></div>
+                                            <div class="b2-widget-box">
+                                                <div class="comment-widget" id="comment-widget" ref="commentWidget"
+                                                     data-count="4" data-hidden="1">
+                                                    <ul class="comment-gujia" ref="gujia">
+
+                                                        <li>
+                                                            <div class="widget-comment-user">
+                                                                <div class="widget-comment-user-left">
+                                                                    <span></span>
+                                                                </div>
+                                                                <time></time>
+                                                            </div>
+                                                            <div class="widget-comment-contnet b2-radius jt">
+                                                                <p></p>
+                                                            </div>
+                                                            <div class="widget-comment-post">
+                                                                <span></span><a href="#"></a>
+                                                            </div>
+                                                        </li>
+
+                                                        <li>
+                                                            <div class="widget-comment-user">
+                                                                <div class="widget-comment-user-left">
+                                                                    <span></span>
+                                                                </div>
+                                                                <time></time>
+                                                            </div>
+                                                            <div class="widget-comment-contnet b2-radius jt">
+                                                                <p></p>
+                                                            </div>
+                                                            <div class="widget-comment-post">
+                                                                <span></span><a href="#"></a>
+                                                            </div>
+                                                        </li>
+
+                                                        <li>
+                                                            <div class="widget-comment-user">
+                                                                <div class="widget-comment-user-left">
+                                                                    <span></span>
+                                                                </div>
+                                                                <time></time>
+                                                            </div>
+                                                            <div class="widget-comment-contnet b2-radius jt">
+                                                                <p></p>
+                                                            </div>
+                                                            <div class="widget-comment-post">
+                                                                <span></span><a href="#"></a>
+                                                            </div>
+                                                        </li>
+
+                                                        <li>
+                                                            <div class="widget-comment-user">
+                                                                <div class="widget-comment-user-left">
+                                                                    <span></span>
+                                                                </div>
+                                                                <time></time>
+                                                            </div>
+                                                            <div class="widget-comment-contnet b2-radius jt">
+                                                                <p></p>
+                                                            </div>
+                                                            <div class="widget-comment-post">
+                                                                <span></span><a href="#"></a>
+                                                            </div>
+                                                        </li>
+
+                                                    </ul>
+                                                    <ul v-if="data != ''" v-cloak>
+                                                        <li v-for="item in data">
+                                                            <div class="widget-comment-user">
+                                                                <div class="widget-comment-user-left">
+                                                                    <a :href="item.user.link" target="_blank"
+                                                                       class="link-block"></a>
+                                                                    <img :src="item.user.avatar"
+                                                                         class="b2-radius avatar"/>
+                                                                    <span v-text="item.user.name"></span>
+                                                                </div>
+                                                                <span v-html="item.date"></span>
+                                                            </div>
+                                                            <div class="widget-comment-contnet b2-radius jt">
+                                                                <p v-html="item.content"></p>
+                                                                <p v-if="item.comment_img" class="comment-img"><img
+                                                                        :src="item.comment_img" class="b2-radius">
+                                                                </p>
+                                                            </div>
+                                                            <div class="widget-comment-post">
+                                                                    <span><b class="b2-color"
+                                                                             v-text="item.post_type"></b>来自：</span><a
+                                                                    :href="item.post.link"
+                                                                    v-html="item.post.title"></a>
+                                                            </div>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </section>
+                                    </div>
+                                </div>
+                            </section>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="item">
-                <div class="row">
-                    <div class="col-md-7">
-                        <div class="single-blog">
-                            <div class="sb-img">
-                                <img src="../../static/assets/img/blog/blog1.jpg" alt="">
-                                <div class="blog-tag">
-                                    <span>23 February, 2020</span>
-                                    <span class="span2"><i class="flaticon-heart"></i> 20k</span>
-                                </div>
-                            </div>
-                            <div class="sb-text">
-                                <span>Travels</span>
-                                <a href="wgm/1.html">
-                                    <h2>Way Winter Is Prefect Times For Traveling</h2>
-                                </a>
-                                <ul>
-                                    <li><a href=""><i class="flaticon-visibility"></i> 02 Comment</a></li>
-                                    <li><a href=""><i class="flaticon-chat"></i> 30k View</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-5">
-                        <div class="single-blog">
-                            <div class="sb-img">
-                                <img src="../../static/assets/img/blog/blog2.jpg" alt="">
-                                <div class="blog-tag">
-                                    <span>23 February, 2020</span>
-                                    <span class="span2"><i class="flaticon-heart"></i> 20k</span>
-                                </div>
-                            </div>
-                            <div class="sb-text">
-                                <span>Life Style</span>
-                                <a href="wgm/1.html">
-                                    <h3>How We're Styling Our Favorite Trends Of 2020</h3>
-                                </a>
-                                <ul>
-                                    <li><a href=""><i class="flaticon-visibility"></i> 02 Comment</a></li>
-                                    <li><a href=""><i class="flaticon-chat"></i> 30k View</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="item">
-                <div class="row">
-                    <div class="col-md-7">
-                        <div class="single-blog">
-                            <div class="sb-img">
-                                <img src="../../static/assets/img/blog/blog1.jpg" alt="">
-                                <div class="blog-tag">
-                                    <span>23 February, 2020</span>
-                                    <span class="span2"><i class="flaticon-heart"></i> 20k</span>
-                                </div>
-                            </div>
-                            <div class="sb-text">
-                                <span>Travels</span>
-                                <a href="wgm/1.html">
-                                    <h2>Way Winter Is Prefect Times For Traveling</h2>
-                                </a>
-                                <ul>
-                                    <li><a href=""><i class="flaticon-visibility"></i> 02 Comment</a></li>
-                                    <li><a href=""><i class="flaticon-chat"></i> 30k View</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-5">
-                        <div class="single-blog">
-                            <div class="sb-img">
-                                <img src="../../static/assets/img/blog/blog2.jpg" alt="">
-                                <div class="blog-tag">
-                                    <span>23 February, 2020</span>
-                                    <span class="span2"><i class="flaticon-heart"></i> 20k</span>
-                                </div>
-                            </div>
-                            <div class="sb-text">
-                                <span>Life Style</span>
-                                <a href="wgm/1.html">
-                                    <h3>How We're Styling Our Favorite Trends Of 2020</h3>
-                                </a>
-                                <ul>
-                                    <li><a href=""><i class="flaticon-visibility"></i> 02 Comment</a></li>
-                                    <li><a href=""><i class="flaticon-chat"></i> 30k View</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+
+
             </div>
         </div>
     </div>
+
 </div>
 
+{# 底部轮播 #}
+<div id="demo" class="carousel slide" data-ride="carousel">
 
-<div class="tranding-post" data-aos="fade-up" data-aos-duration="1500">
-    <div class="container">
-        <h2>Trending Post </h2>
-        <div class="row">
-            <div class="col-md-4">
-                <div class="single-treand">
-                    <span>Travels</span>
-                    <a href="blog-post-3.html"><h3>Iceland's Volgano Beautiful Place For
-                        Turismo Ezom </h3></a>
-                    <ul>
-                        <li><a href=""><i class="flaticon-visibility"></i> 02 Comment</a></li>
-                        <li><a href=""><i class="flaticon-chat"></i> 30k View</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="single-treand">
-                    <span>Fashion</span>
-                    <a href="blog-post-2.html"><h3>Choosing The Right Glass Shape On Your
-                        Daily Life</h3></a>
-                    <ul>
-                        <li><a href=""><i class="flaticon-visibility"></i> 02 Comment</a></li>
-                        <li><a href=""><i class="flaticon-chat"></i> 30k View</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="single-treand">
-                    <span>Design</span>
-                    <a href="wgm/1.html"><h3>Sketch For Teams, Smart Layout And More </h3></a>
-                    <ul>
-                        <li><a href=""><i class="flaticon-visibility"></i> 02 Comment</a></li>
-                        <li><a href=""><i class="flaticon-chat"></i> 30k View</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
+  <!-- 指示符 -->
+  <ul class="carousel-indicators">
+    <li data-target="#demo" data-slide-to="0" class="active"></li>
+    <li data-target="#demo" data-slide-to="1"></li>
+    <li data-target="#demo" data-slide-to="2"></li>
+  </ul>
+
+{#    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/css/bootstrap.min.css">#}
+  <script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://cdn.staticfile.org/popper.js/1.15.0/umd/popper.min.js"></script>
+  <script src="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+  <!-- 轮播图片 -->
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img decoding="async" src="https://static.runoob.com/images/mix/img_fjords_wide.jpg">
     </div>
-</div>
-
-
-<div class="new-post" data-aos="fade-up" data-aos-duration="2500">
-    <div class="container">
-        <h2>New Post</h2>
-        <div class="row">
-            <div class="col-md-5">
-                <div class="single-new-post">
-                    <div class="sb-img">
-                        <img src="../../static/assets/img/blog/new-post.jpg" alt="">
-                        <div class="blog-tag">
-                            <span>23 February, 2020</span>
-                            <span class="span2"><i class="flaticon-heart"></i> 20k</span>
-                        </div>
-                    </div>
-                    <div class="sb-text">
-                        <span>UX Design</span>
-                        <a href="category-1.html">
-                            <h3>Video: 5 Way To Design Minimalistic & Meaningful </h3>
-                        </a>
-                        <a href="https://www.youtube.com/watch?v=ptbdl5TLU3w" class="expand-video"><i
-                                class="flaticon-play-button"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="single-new-post single-new-post2">
-                    <div class="sb-img">
-                        <img src="../../static/assets/img/blog/new-post1.jpg" alt="">
-                    </div>
-                    <div class="sb-text sb-text2">
-                        <span>Technology </span>
-                        <a href="category-1.html">
-                            <h4>Ai's Potential To Manage The Supply Chain </h4>
-                        </a>
-                        <ul>
-                            <li><a href=""><i class="flaticon-visibility"></i> 02 Comment</a></li>
-                            <li><a href=""><i class="flaticon-chat"></i> 30k View</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="single-new-post">
-                    <div class="sb-img">
-                        <img src="../../static/assets/img/blog/new-post2.jpg" alt="">
-                    </div>
-                    <div class="sb-text">
-                        <span>Fashion</span>
-                        <a href="category-1.html">
-                            <h4>Ai's Potential To Manage The Supply Chain</h4>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="single-new-post">
-                    <div class="sb-img">
-                        <img src="../../static/assets/img/blog/new-post3.jpg" alt="">
-                    </div>
-                    <div class="sb-text">
-                        <span>Fashion & Beauty</span>
-                        <a href="category-1.html">
-                            <h4>7 Outfits To Copy For Thanksgiving—No Matter You’re Doing</h4>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="single-new-post">
-                    <div class="sb-img">
-                        <img src="../../static/assets/img/blog/new-post4.jpg" alt="">
-                    </div>
-                    <div class="sb-text">
-                        <span>TV, Film, Books & Web</span>
-                        <a href="category-1.html">
-                            <h4>Every Coat We Need To Discuss From “Emily In Paris”</h4>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="single-new-post">
-                    <div class="sb-img">
-                        <img src="../../static/assets/img/blog/new-post5.jpg" alt="">
-                    </div>
-                    <div class="sb-text">
-                        <span>Relationships</span>
-                        <a href="category-1.html">
-                            <h4>How To Know When A Healthy Relationship Is No Longer Serving You</h4>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
+    <div class="carousel-item">
+      <img decoding="async" src="https://static.runoob.com/images/mix/img_nature_wide.jpg">
     </div>
-</div>
-
-
-<div class="plant-slide-area" data-aos="fade-up" data-aos-duration="1500">
-    <div class="container-fluid c-fulid-max">
-        <div class="plant-slider  owl-carousel owl-theme">
-            <div class="item">
-                <div class="single-p-slide">
-                    <img src="../../static/assets/img/blog/slider1.jpg" alt="">
-                    <div class="p-slider-text">
-                        <p>INTERIORS & DECOR</p>
-                        <h2>How To Become A Plant Person When You’re Super Busy And Kinda Lazy</h2>
-                        <a href="about-us.html">Read More <i class="flaticon-right"></i> </a>
-                    </div>
-                </div>
-            </div>
-            <div class="item">
-                <div class="single-p-slide">
-                    <img src="../../static/assets/img/blog/slider1.jpg" alt="">
-                    <div class="p-slider-text">
-                        <p>INTERIORS & DECOR</p>
-                        <h2>How To Become A Plant Person When You’re Super Busy And Kinda Lazy</h2>
-                        <a href="about-us.html">Read More <i class="flaticon-right"></i> </a>
-                    </div>
-                </div>
-            </div>
-            <div class="item">
-                <div class="single-p-slide">
-                    <img src="../../static/assets/img/blog/slider1.jpg" alt="">
-                    <div class="p-slider-text">
-                        <p>INTERIORS & DECOR</p>
-                        <h2>How To Become A Plant Person When You’re Super Busy And Kinda Lazy</h2>
-                        <a href="about-us.html">Read More <i class="flaticon-right"></i> </a>
-                    </div>
-                </div>
-            </div>
-        </div>
+    <div class="carousel-item">
+      <img decoding="async" src="https://static.runoob.com/images/mix/img_mountains_wide.jpg">
     </div>
-</div>
+  </div>
 
+  <!-- 左右切换按钮 -->
+  <a class="carousel-control-prev" href="#demo" data-slide="prev">
+    <span class="carousel-control-prev-icon"></span>
+  </a>
+  <a class="carousel-control-next" href="#demo" data-slide="next">
+    <span class="carousel-control-next-icon"></span>
+  </a>
 
-<div class="social-banner" data-aos="fade-up" data-aos-duration="1500">
-    <h1>Following On Our Instagram Update Every Weeks </h1>
-    <a href="https://www.instagram.com/" class="btn-1">Follow us on Instagram </a>
 </div>
 
 
@@ -822,8 +922,8 @@
         <div class="row">
             <div class="col-md-3">
                 <div class="single-f-area">
-                    <img src="../../static/assets/img/Logo.png" alt="">
-                    <p>此网站主要是分享和自整理网络上有关宗亚夫妇两人的电视剧，综艺，照片等等。希望通过本站能有更多的小伙伴认识和喜欢他们。
+                    <h5>关于本站</h5>
+                    <p class="footer">此网站主要是分享和自整理网络上有关宗亚夫妇两人的电视剧，综艺，照片等等。希望通过本站能有更多的小伙伴认识和喜欢他们。
                     </p>
 
                 </div>
@@ -832,10 +932,10 @@
                 <div class="single-f-menu">
                     <h5>博客</h5>
                     <ul>
-                        <li><a href="index.html">首页</a></li>
-                        <li><a href="about.html">关于</a></li>
-                        <li><a href="contact.html">联系我</a></li>
-                        <li><a href="contact.html">订阅</a></li>
+                        <li class="footer"><a href="{% url 'couple:index' %}">首页</a></li>
+                        <li class="footer"><a href="{% url 'couple:about' %}">关于</a></li>
+                        <li class="footer"><a href="{% url 'couple:contact' %}">联系我</a></li>
+                        <li class="footer"><a href="/contact.html">订阅</a></li>
                     </ul>
                 </div>
             </div>
@@ -843,16 +943,16 @@
                 <div class="single-f-menu">
                     <h5>目录</h5>
                     <ul>
-                        <li><a href="category-1.html">文章</a></li>
-                        <li><a href="category-2.html">视频</a></li>
-                        <li><a href="category-3.html">图集</a></li>
+                        <li class="footer"><a href="category-1.html">文章</a></li>
+                        <li class="footer"><a href="category-2.html">视频</a></li>
+                        <li class="footer"><a href="category-3.html">图集</a></li>
                     </ul>
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="single-f-menu single-f-menu2">
                     <h5>订阅</h5>
-                    <p>宗亚夫妇分享站点</p>
+                    <p class="footer">宗亚夫妇分享站点</p>
                     <div class="input-group">
                         <input type="text" class="form-control" placeholder="E-mail" aria-label="Recipient's username"
                                aria-describedby="basic-addon2">
@@ -873,7 +973,7 @@
 <footer>
     <div class="container">
         <div class="footer-text">
-            <p>Copyright © 2022 JongAh.Love All Rights Reserved By </p>
+            <p>Copyright © 2022-2023 JongAh.Love All Rights Reserved By </p>
         </div>
     </div>
 </footer>
@@ -913,6 +1013,48 @@
         }
 
     });
+</script>
+
+<script>
+    $(document).ready(function () {
+        var page = 1; // 初始加载第一页
+        var url = "{% url 'couple:index' %}?page=" + page;
+        $('.load-more').click(function () {
+            $.get(url, function (data) {
+                $('.post-list-meta-box').append(data);
+                page += 1
+                url = "{% url 'couple:index' %}?page=" + page;
+            });
+        });
+    });
+</script>
+
+<script>
+    var articles = document.getElementById('main-content');
+    var sidebar = document.getElementById('sidebar');
+
+    articles.onscroll = function () {
+        var maxHeight = Math.max(articles.scrollHeight, sidebar.scrollHeight);
+        if (maxHeight > articles.clientHeight) {
+            articles.style.height = maxHeight + 'px';
+        } else if (articles.scrollTop + articles.clientHeight == articles.scrollHeight) {
+            articles.style.height = (document.documentElement.clientHeight - sidebar.offsetHeight) + 'px';
+        }
+    };
+
+    articles.addEventListener('scroll', function () {
+        const scrollTop = articles.scrollTop;
+        const sidebarTop = sidebar.getBoundingClientRect().top;
+
+        if (scrollTop > 100) {
+            sidebar.style.position = 'fixed';
+            sidebar.style.top = '100px';
+        } else {
+            sidebar.style.position = 'static';
+        }
+    });
+
+
 </script>
 </body>
 </html>

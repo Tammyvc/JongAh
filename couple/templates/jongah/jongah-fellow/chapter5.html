@@ -1,0 +1,9 @@
+{% extends 'base_fellow.html' %}
+{% load humanize %}
+
+
+{% block content %}
+    {{ post.content|safe }}
+    {{ post.doc|safe }}
+{% endblock %}
+

@@ -15,7 +15,6 @@ from pathlib import Path
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
@@ -25,8 +24,7 @@ SECRET_KEY = "django-insecure-mpssxyav3jh@nf@t3w14bvh+vfuj#rti#2qo-#r@(*oecq(3v@
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
-
+ALLOWED_HOSTS = ['www.jongah.top','127.0.0.1']
 
 # Application definition
 
@@ -38,8 +36,9 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    # "django.contrib.humanize",
+    "tinymce",
     "couple",
-    "mdeditor",
     "accounts",
 ]
 
@@ -47,7 +46,7 @@ MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
-    "django.middleware.csrf.CsrfViewMiddleware",
+    # "django.middleware.csrf.CsrfViewMiddleware",
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
@@ -76,19 +75,18 @@ TEMPLATES = [
 
 WSGI_APPLICATION = "JongAh.wsgi.application"
 
-
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
 DATABASES = {
     "default": {
+        # "ENGINE": "mysql",
         "ENGINE": "django.db.backends.mysql",
         "NAME": "jongah",
-        "USER":"root",
-        "PASSWORD":'12345678',
+        "USER": "root",
+        "PASSWORD": '12345678',
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
@@ -97,9 +95,9 @@ AUTH_PASSWORD_VALIDATORS = [
     {
         "NAME": "django.contrib.auth.password_validation.UserAttributeSimilarityValidator",
     },
-    {"NAME": "django.contrib.auth.password_validation.MinimumLengthValidator",},
-    {"NAME": "django.contrib.auth.password_validation.CommonPasswordValidator",},
-    {"NAME": "django.contrib.auth.password_validation.NumericPasswordValidator",},
+    {"NAME": "django.contrib.auth.password_validation.MinimumLengthValidator", },
+    {"NAME": "django.contrib.auth.password_validation.CommonPasswordValidator", },
+    {"NAME": "django.contrib.auth.password_validation.NumericPasswordValidator", },
 ]
 
 CACHES = {
@@ -112,8 +110,6 @@ CACHES = {
     }
 }
 
-
-
 # Internationalization
 # https://docs.djangoproject.com/en/4.1/topics/i18n/
 
@@ -125,25 +121,24 @@ USE_I18N = True
 
 USE_TZ = True
 
-
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
 STATIC_URL = "/static/"
 # STATIC_ROOT = os.path.join(BASE_DIR,'static')
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR,'static/'),
+    os.path.join(BASE_DIR, 'static/'),
 ]
 
 MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR,'media')
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
-#AUTH_USER_MODEL = 'accounts.CustomUser'
+LOGIN_URL = "/login/"
 
 # 邮件配置
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
@@ -154,3 +149,44 @@ EMAIL_HOST_PASSWORD = 'hrwsxoeoiolpechh'
 
 # 注册有效期天数
 CONFIRM_DAYS = 7
+
+TINYMCE_DEFAULT_CONFIG = {
+    # // General options
+    'mode': 'textareas',
+    'theme': "silver",
+    'plugins': "code,toc,hr,image,link,help,charmap,codesample,pagebreak,style,layer,table,save,advhr,advimage,advlink,emoticons,iespell,inlinepopups,insertdatetime,preview,media,searchreplace,print,contextmenu,paste,directionality,fullscreen,noneditable,visualchars,nonbreaking,xhtmlxtras,template,wordcount,lists,advlist,autosave",
+    'skin': 'oxide',
+    'language': 'zh_CN',
+    'image_advtab': 'true',
+    'branding':'false',
+    'automatic_uploads': 'false',
+    # 'imageupload_url': 'media/image/posts',
+    'images_upload_url':'/upload_image/',
+
+    # // Theme  options
+    'theme_advanced_buttons1': "save,newdocument,|,bold,italic,underline,strikethrough,|,justifyleft,justifycenter,justifyright,justifyfull,styleselect,formatselect,fontselect,fontsizeselect,fullscreen,code",
+    'theme_advanced_buttons2': "cut,copy,paste,pastetext,|,search,replace,|,bullist,numlist,|,outdent,indent,blockquote,|,undo,redo|,link,unlink,anchor,image,cleanup,|,insertdate,inserttime,preview,|,forecolor,backcolor",
+    'theme_advanced_buttons3': "tablecontrols,|,hr,removeformat,visualaid,|,sub,sup,|,charmap,emotions,iespell,media,advhr,|,print,|,ltr,rtl",
+    'theme_advanced_toolbar_location': "top",
+    'theme_advanced_toolbar_align': "left",
+    'theme_advanced_statusbar_location': "bottom",
+    'theme_advanced_resizing': 'true',
+
+    # // content_css: "/css/style.css",
+    'template_external_list_url': "lists/template_list.js",
+    'external_link_list_url': "lists/link_list.js",
+    'external_image_list_url': "lists/image_list.js",
+    'media_external_list_url': "lists/media_list.js",
+
+    # // Style formats
+    'style_formats': [
+        {'title': 'Bold text', 'inline': 'strong'},
+        {'title': 'Red text', 'inline': 'span', 'styles': {'color': '#ff0000'}},
+        {'title': 'Help', 'inline': 'strong', 'classes': 'help'},
+        {'title': 'Table styles'},
+        {'title': 'Table row 1', 'selector': 'tr', 'classes': 'tablerow'}
+    ],
+
+    'width': '700',
+    'height': '400'
+}

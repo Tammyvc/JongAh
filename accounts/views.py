@@ -1,11 +1,20 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from .models import CustomUser, ConfirmString,Profile
 from django.urls import reverse
+from .forms import UserProfileForm
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth import login,authenticate
 from django.conf import settings
+from django.core.files.storage import FileSystemStorage
 from django.views import View
 from django.core.mail import EmailMultiAlternatives
 import datetime
 import hashlib
+from django.http import HttpResponse
+
+
+def index(request):
+    render(request,'jongah/index.html')
 
 
 class LoginView(View):
@@ -13,10 +22,13 @@ class LoginView(View):
         return render(request, 'account/login.html')
 
     def post(self, request):
+
         if request.session.get('is_login',None):
-            return render(request,'jongah/index.html')
+            return render(request,'jongah/index.html',locals())
         if request.method == 'POST':
             username_or_email = request.POST.get('username_or_email')
+            user = CustomUser.objects.get(name=username_or_email)
+            profile = Profile.objects.get(user=user)
             password = request.POST.get('password')
             message = '请检查填写的内容!'
 
@@ -34,10 +46,11 @@ class LoginView(View):
                 return render(request, 'account/login.html', locals())
 
             if user.password == self.hash_code(password):
+
                 request.session['is_login'] = True
                 request.session['user_id'] = user.id
                 request.session['user_name'] = user.name
-                return redirect(reverse('couple:index'))
+                return redirect('accounts:user_center',username=username_or_email)
             else:
                 message = '密码不正确！'
                 return render(request, 'account/login.html', locals())
@@ -79,6 +92,7 @@ class RegisterView(View):
                 new_user = CustomUser.objects.create(
                     name=username, email=email, password=password_1
                 )
+                new_user_profile = Profile.objects.create(user=new_user)
 
                 code = self.make_confirm_string(new_user)
                 self.send_email(email, code)
@@ -158,39 +172,68 @@ class PasswordForgetView(View):
 class LoggoutView(View):
     def get(self,request):
         request.session.flush()
-        return render(request,'jongah/index.html')
+        return redirect('accounts:login')
 
-def user_settings(request,username):
+# @login_required
+def user_center(request,username):
     if username:
-
         user = CustomUser.objects.get(name=username)
         profile = Profile.objects.get(user=user)
         return render(request,'account/user_center.html',locals())
-    return render(request, 'account/edit.html',locals())
+    return render(request, 'jongah/index.html',locals())
 
-class UserEditView(View):
 
-    def get(self,request,user_name):
-        return render(request,'account/edit.html',locals())
+# @login_required
+def edit_profile(request,user_name):
+    user = CustomUser.objects.get(name=user_name)
+    user_profile = Profile.objects.get(user=user)
+    if request.method == 'POST':
+        user_profile_form = UserProfileForm(request.POST)
+        if user_profile_form.is_valid():
+            nickname = request.POST.get('nickname')
+            sex = request.POST.get('sex')
+            introduction = request.POST.get('introduction')
+            user_profile.nickname = nickname
+            user_profile.sex = sex
+            user_profile.introduction = introduction
+            user_profile.save()
+            return redirect('accounts:user_center',username=user_name)
+    else:
+        user_profile_form = UserProfileForm()
+    return render(request,'account/edit.html',locals())
 
-    def post(self,request,user_name):
-        # try:
-        user = CustomUser.objects.get(name=user_name)
-        nickname = request.POST.get('nickname', None)
-        sex = request.POST.get('sex', None)
-        introduction = request.POST.get('desc', None)
-        profile = Profile.objects.filter(user=user)[0]
-        if profile:
-            profile.nickname = nickname
-            profile.sex = sex
-            profile.introduction = introduction
-            profile.save()
-        else:
-            profile = Profile.objects.create(user=user,nickname=nickname,
-                                  sex=sex,introduction=introduction)
-            return render(request, 'account/user_center.html',locals())
+def cover(request,user_name):
+    if request.method == 'POST':
+        user = get_object_or_404(CustomUser, name=user_name)
+        cover = request.FILES.get('cover_file')
+        cover_name = request.POST.get('cover_name')
 
-        return render(request,'account/user_center.html',locals())
+        # 获取 FileSystemStorage 对象
+        fs = FileSystemStorage(location=settings.MEDIA_ROOT)
 
-def modify_photo(request):
-    pass
+        # 保存头像文件到媒体文件夹
+        saved_file = fs.save(cover_name, cover)
+
+        # 更新用户个人资料中的头像文件路径
+        user.profile.cover = saved_file
+        user.profile.save()
+
+        return HttpResponse('封面上传成功！')
+
+def avatar(request,user_name):
+    if request.method == 'POST':
+        user = get_object_or_404(CustomUser, name=user_name)
+        avatar = request.FILES.get('avatar_file')
+        avatar_name = request.POST.get('avatar_name')
+
+        # 获取 FileSystemStorage 对象
+        fs = FileSystemStorage(location=settings.MEDIA_ROOT)
+
+        # 保存头像文件到媒体文件夹
+        saved_file = fs.save(avatar_name, avatar)
+
+        # 更新用户个人资料中的头像文件路径
+        user.profile.photo = saved_file
+        user.profile.save()
+
+        return HttpResponse('头像上传成功！')

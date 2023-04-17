@@ -82,6 +82,7 @@ class Profile(models.Model):
 
 
 
+
 class ConfirmString(models.Model):
     code = models.CharField(max_length=256,verbose_name='确认码')
     user = models.OneToOneField('CustomUser', on_delete=models.CASCADE,verbose_name='用户')

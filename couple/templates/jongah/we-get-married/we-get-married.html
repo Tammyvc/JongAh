@@ -1,0 +1,70 @@
+{% extends 'base_cat.html' %}
+{% load humanize %}
+
+{% block content %}
+    <link rel="stylesheet" href="../../static/assets/css/wgm-video.css">
+    <div id="home-row-latest" class="have-widget  home_row home_row_0  module-posts  " style="">
+        <div class="index-wrapper">
+            <main class="wgm-main">
+                <div id="learn-press-course-tabs" class="course-tabs">
+                    <div class="course-tab-panels">
+                        <div class="course-tab-panel-curriculum course-tab-panel" id="tab-curriculum">
+                            <div class="course-curriculum" id="learn-press-course-curriculum">
+                                <div class="curriculum-scrollable">
+                                    <ul class="curriculum-sections">
+                                        <li class="section" id="section-%e8%af%be%e7%a8%8b%e7%ae%80%e4%bb%8b-1"
+                                            data-id="%e8%af%be%e7%a8%8b%e7%ae%80%e4%bb%8b-1" data-section-id="1">
+                                            <div class="section-header">
+                                                <div class="section-left">
+                                                    <span class="section-title">
+                                                        视频选集
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <ul class="section-content">
+                                                {% for video in videos %}
+                                                    <li class="course-item course-item-lp_lesson course-item-2805 item-preview has-status"
+                                                        data-id="2805">
+                                                        <a class="section-item-link"
+                                                           href="{% url 'couple:wgm_video_detail' video.slug %}">
+                                                            <span class="item-name">{{ video.title }}</span>
+                                                            <div class="course-item-meta">
+                                                                <span class="item-meta course-item-preview">预览</span>
+                                                            </div>
+                                                        </a>
+
+                                                    </li>
+                                                {% endfor %}
+                                            </ul>
+
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="b2-pagenav post-nav box b2-radius mg-t">
+                                    <div class="ajax-pager">
+                                        <div class="ajax-pagenav">
+                                            <div class="btn-group nav-normal post-nav">
+                                                <a href="/video/we-get-married/?page=1" class="button empty selected disabled">1</a>
+                                                <a href="/video/we-get-married/?page=2" class="button empty ">2</a>
+                                                <label class="pager-center">
+                                                    <input type="text" value="1" autocomplete="off">
+                                                    /<span>2页</span>
+                                                    <button class="b2-color text" style="display: none;">前往</button>
+                                                </label>
+                                            </div>
+                                            <div class="btn-pager">
+                                                <a herf="javascript:void(0)" class="button selected empty">❮</a><a
+                                                    href="https://www.wpdaxue.com/shop/wp-plugins/page/2"
+                                                    class="empty button">❯</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+{% endblock %}

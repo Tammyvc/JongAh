@@ -78,12 +78,13 @@
     height: 43px;
     border: 2px solid #fff;
     margin-right: 8px;
+    border-radius: 100%;
 }
 
 .top-user-box-drop ul {
     display: flex;
-    flex-flow: wrap;
-    padding: 10px 10px 10px
+    justify-content: space-between;
+    padding: 0 20px 12px
 }
 
 .top-user-box-drop ul li {
@@ -332,6 +333,7 @@ img.avatar{
 	background-color: #eee;
 	width:100%;
 	height:100%;
+    border-radius: 100%;
 }
 
 .clear {
@@ -521,8 +523,31 @@ img {
     width: 100%;
 }
 
-button,
-input,
+button, .button {
+    border-radius: 4px;
+    color: #1c92be;
+    padding: 8px 16px;
+    transition: opacity .2s;
+    position: relative;
+    cursor: pointer;
+    font-size: 12px;
+    margin: 0;
+    white-space: nowrap;
+}
+
+.top-user-info .header-login-button li.empty {
+    margin-right: 10px;
+    background: #F4F4F4;
+}
+
+.top-user-info .header-login-button li {
+    margin-left: 0;
+    background: #F4F4F4;
+    border: 0;
+    color: inherit;
+    background: rgb(204 204 204 / 21%);
+}
+
 textarea {
     letter-spacing: 0px;
 }
@@ -583,10 +608,18 @@ h2 {
 }
 
 h3 {
-    font-size: 30px;
-    line-height: 40px;
-    margin-bottom: 0px;
-    font-weight: 700;
+    font-size: 17px;
+    font-weight: 600;
+    color: #121212;
+    margin-bottom: 2px;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    overflow: hidden;
+    text-justify: inter-ideograph;
+    word-break: break-all;
+    height: 20px;
+    margin-top: 2px;
 }
 
 h4 {
@@ -597,6 +630,38 @@ h4 {
 h5 {
     font-size: 22px;
     line-height: 32px;
+    color: white;
+}
+
+
+/*.breadcrumb-nav {*/
+/*    padding: 8px 15px;*/
+/*    margin-bottom: 20px;*/
+/*    list-style: none;*/
+/*    background-color: #f5f5f5;*/
+/*    border-radius: 4px*/
+/*}*/
+
+/*.breadcrumb-nav > li {*/
+/*    display: inline-block*/
+/*}*/
+
+/*.breadcrumb-nav > li + li:before {*/
+/*    padding: 0 5px;*/
+/*    color: #ccc;*/
+/*    content: "/\00a0"*/
+/*}*/
+
+/*.breadcrumb-nav > .active {*/
+/*    color: #777*/
+/*}*/
+
+p.footer{
+    color: white;
+}
+
+.footer a{
+    color: white;
 }
 
 h6 {
@@ -612,6 +677,38 @@ p {
     color: #54514C;
     line-height: 26px;
     margin: 0;
+}
+
+.widget-area {
+    /*flex:1;*/
+    width: 300px;
+    min-width: 300px;
+    margin-left: 16px;
+    max-width: 100%;
+}
+
+.comment-submit {
+    background: #54d6f0;
+    border: 1px solid #54d6f0;
+    border-radius: 2px;
+    color: #fff;
+    padding: 8px 16px;
+    transition: opacity .2s;
+    position: relative;
+    cursor: pointer;
+    font-size: 12px;
+    margin: 0;
+    white-space: nowrap;
+}
+
+.b2-radius {
+    border-radius: 2px;
+}
+
+.box, .side-fixed {
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0 0 2px rgb(98 124 153 / 10%);
+    position: relative;
 }
 
 p img {
@@ -634,11 +731,10 @@ small {
 }
 
 /* links */
-a,
-a:visited {
+a, a:visited {
     text-decoration: none;
     font-family: "Source Sans Pro", sans-serif;
-    font-weight: 500;
+    font-weight: 400;
     font-size: 16px;
     letter-spacing: 0;
     outline: 0;
@@ -717,10 +813,16 @@ ol ol li {
 li {
     line-height: 18px;
     list-style-type: none;
-    margin: 0px;
+    /*margin: 2px;*/
     letter-spacing: 0;
     display: inline-block;
     font-size: 16px;
+}
+
+
+
+.about-site {
+    font-family: "Source Sans Pro", sans-serif;
 }
 
 [class^="flaticon-"]:before {
@@ -902,6 +1004,7 @@ header.header-area .header-top .h-social-links ul li a {
 
 header.header-area .aubliy-nav {
     position: relative;
+    margin-bottom: 16px ;
 }
 
 header.header-area .aubliy-nav .menu-container {
@@ -3927,7 +4030,7 @@ header.header-area.header-area2 .header-top .header-top-nav .search-box .search-
     position: relative;
     padding-top: 120px;
     padding-bottom: 50px;
-    background: #FFFFFF;
+    background: #0d0c0c;
 }
 
 .footer-area .single-f-area {

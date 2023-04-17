@@ -244,8 +244,8 @@ a.link:hover {
 .top-user-avatar img{
     display: block;
     cursor: pointer;
-    width:34px;
-    height:34px
+    /*width:34px;*/
+    /*height:34px*/
 }
 .top-user-avatar.avatar-parent{
     cursor: pointer;

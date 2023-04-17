@@ -1,0 +1,94 @@
+{% extends 'base_post.html' %}
+{% load static %}
+
+{% block content %}
+    <article class="single-article b2-radius box">
+        <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Library</li>
+            </ol>
+        </nav>
+        <header class="entry-header">
+            <h1>{{ post.title }}</h1>
+            <div id="post-meta">
+                <div class="post-meta-row">
+                    <ul class="post-meta">
+                        <li>
+                            <div class="post-list-cat b2-radius">
+                                <a style="color: #00A0D1">{{ post.category }}</a>
+                            </div>
+                        </li>
+                        <li class="single-date">
+                            <span>{{ post.created_time }}</span>
+                        </li>
+                        <li class="single-like">
+                            <i class="fa fa-thumbs-o-up" aria-hidden="true"></i>
+                            <span>{{ post.likes }}</span>
+                        </li>
+                        <li class="single-eye">
+                            <i class="fa fa-eye" aria-hidden="true"></i>
+                            <span>{{ post.views }}</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </header>
+        <div class="entry-content">
+            <p class="wgm">
+                {{ post.content|safe }}
+                {{ post.doc|safe }}
+            </p>
+        </div>
+        <div class="post-tags-meat">
+            {% for tag in post.tags.all %}
+                <p>
+            <span class="tag-img">
+                <i class="fa fa-tag" aria-hidden="true"></i>
+            </span>
+                    <span class="tag-text">
+                {{ tag }}
+            </span>
+
+                </p>
+            {% endfor %}
+        </div>
+        <div class="content-footer post-content-footer action">
+            <div class="inner-wrapper-sticky"
+                 style="position: fixed; top: 160px; left: 7px; width: 49px; transform: translate3d(0px, 0px, 0px);">
+                <div class="post-content-footer-in">
+                    <div class="content-footer-poster">
+                        <a href="{% url 'couple:share_post' post_id=post.id %}">
+                            <button data-title="分享" class="poster-span b2tooltipbox" onclick="showShare()">
+                                <i class="fa fa-share" aria-hidden="true"></i>
+                            </button>
+                        </a>
+                        <button data-title="去评论" id="floating-comment-button"
+                                class="mobile-hidden b2tooltipbox comment-span">
+                            <i class="fa fa-comment" aria-hidden="true"></i>
+                        </button>
+                        <button data-title="收藏" class="text favorite-button b2tooltipbox">
+                            <i class="fa fa-star" aria-hidden="true"></i></button>
+                    </div>
+                    <div data-post-id="{{ post.id }}" class="like-block content-footer-zan-cai b2tooltipbox">
+                        <span class="like-count">
+                            <i id="like-thumb" class="fa" aria-hidden="true">
+                            </i>
+                            <b>{{ post.likes }}</b>
+                        </span>
+                        <span class="mobile-show">
+                            <i class="b2font b2-dislike-fill "></i>
+                            <b>0</b>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </article>
+
+
+    <style rel="stylesheet" href="{% static 'codelight/default.css' %}"></style>
+    <style rel="stylesheet" href="{% static 'codelight/markdown_highlighy.css' %}"></style>
+    <style rel="stylesheet" href="{% static 'codelight/monokai.css' %}"></style>
+
+{% endblock %}

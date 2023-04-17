@@ -1,0 +1,156 @@
+{% extends 'base_wgm.html' %}
+{% load static %}
+
+{% block content %}
+    <div id="wrap" style="min-height: 182.016px;">
+        <div class="lp-archive-courses">
+            <div id="popup-course" class="course-summary">
+                <input type="checkbox" id="sidebar-toggle">
+                <div id="popup-header">
+                    <div class="container">
+                        <div class="header-flex-wrap">
+                            <div class="sidebar-toggle-button"></div>
+                            <div class="popup-header__inner">
+                                <h2 class="course-title">
+                                    <a href="https://www.wordpresskt.com/courses/getting-started">我们结婚了---宗亚夫妇</a>
+                                </h2>
+
+                            </div>
+                            <a href="{% url 'couple:wgm_video' %}" class="back-course"><i
+                                    class="fa fa-times"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="popup-sidebar">
+                    <div class="side-logo">
+                        <div class="video-logo">
+                            <a href="{% url 'couple:index' %}" rel="home">
+                                <img src="../../../static/assets/img/Logo.png" alt="WordPress课堂">
+                            </a>
+                        </div>
+                        <div class="sidebar-toggle-button"></div>
+                    </div>
+
+                    <div class="course-curriculum" id="learn-press-course-curriculum">
+                        <div class="curriculum-scrollable">
+
+
+                            <ul class="curriculum-sections">
+
+                                <li class="section" id="section-%e8%af%be%e7%a8%8b%e7%ae%80%e4%bb%8b-1"
+                                    data-id="%e8%af%be%e7%a8%8b%e7%ae%80%e4%bb%8b-1" data-section-id="1">
+
+                                    <div class="section-header">
+                                        <div class="section-left">
+                                            <h5 class="section-title">
+                                                视频选集
+                                            </h5>
+                                        </div>
+
+                                    </div>
+
+
+                                    <ul class="section-content">
+                                        {% for post in posts %}
+
+                                            <li class="course-item course-item-lp_lesson course-item-2805 current item-preview has-status">
+                                                <div>
+                                                    <i class="fa fa-video-camera" aria-hidden="true"></i>
+                                                    <a class="section-item-link"
+                                                       href="{% url 'couple:wgm_video_detail' post.slug %}">
+                                                        <span class="item-name">{{ post.title }}</span>
+                                                    </a>
+                                                </div>
+
+                                            </li>
+                                        {% endfor %}
+                                    </ul>
+
+                                </li>
+
+
+                            </ul>
+
+
+                        </div>
+                    </div>
+                </div>
+
+                <div id="popup-content">
+                    <div id="learn-press-content-item" class="container">
+                        <div class="content-item-scrollable">
+                            <div class="content-item-wrap">
+                                <div class="content-item-summary entry">
+                                    <div class="entry-head">
+                                        <h1 class="course-item-title question-title entry-title">{{ video.title }}</h1>
+                                    </div>
+
+                                    <div class="entry-content content-item-description lesson-description">
+                                        {{ video.content|safe }}
+                                        {{ video.doc|safe }}
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+                    {% if request.session.is_login %}
+                        <div id="learn-press-item-comments" class="container">
+                            <div class="learn-press-comments">
+
+                                <div id="comments" class="entry-comments">
+                                    <div id="respond" class="comment-respond">
+                                        <h3 id="reply-title" class="comment-reply-title">发表回复 <small>
+                                            <a rel="nofollow" id="cancel-comment-reply-link"
+                                               href="/courses/getting-started/lessons/2806#respond"
+                                               style="display:none;"><i
+                                                    class="wpcom-icon wi">
+                                                <svg aria-hidden="true">
+                                                    <use xlink:href="#wi-close"></use>
+                                                </svg>
+                                            </i></a></small></h3>
+                                        <form method="post" action="">
+                                            {% csrf_token %}
+                                            <div class="form-group">
+                                                <textarea class="form-control" id="comment-text" name="comment_text" style="resize: none"
+                                                          rows="6"></textarea>
+                                            </div>
+                                            <button type="submit" class="btn btn-primary">提交</button>
+                                        </form>
+                                    </div><!-- #respond -->
+                                </div><!-- .comments-area -->
+                            </div>
+                        </div>
+                    {% else %}
+                        <div class="alert alert-info my-3">
+                            请先 <a href="{% url 'accounts:login' %}">登录</a> 后再进行评论。
+                        </div>
+                    {% endif %}
+
+
+                </div>
+            </div>
+
+            <div id="popup-footer">
+
+                <div class="course-item-nav" data-nav="next">
+
+                    <div class="next">
+                        <div class="course-item-nav__name">必读说明</div>
+                        <a href="">
+                            下一步 </a>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+
+    <style rel="stylesheet" href="{% static 'codelight/default.css' %}"></style>
+    <style rel="stylesheet" href="{% static 'codelight/markdown_highlighy.css' %}"></style>
+    <style rel="stylesheet" href="{% static 'codelight/monokai.css' %}"></style>
+
+{% endblock %}

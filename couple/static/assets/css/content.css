@@ -1,0 +1,78 @@
+.b2-content .content-area, .post-style-2 .content-area, .archive .content-area {
+    margin: 0 auto;
+}
+
+.content-area {
+    width: 100%;
+    max-width: 100%;
+}
+
+.home_row {
+    position: relative;
+    margin-bottom: 24px;
+}
+
+.home_row>div {
+    display: flex;
+    margin: 0 auto;
+    max-width: 100%;
+    position: relative;
+}
+
+.wrapper {
+    width: 1200px;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.wrapper {
+    margin: 0 auto;
+    max-width: 100%;
+}
+
+.content-area {
+    width: 100%;
+    max-width: 100%;
+}
+
+.post-modules-top {
+    display: flex;
+    line-height: 1;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 16px;
+}
+
+.widget-area {
+    will-change: min-height;
+}
+
+.post-3 .item-in {
+    display: flex;
+    position: relative;
+    padding: 16px;
+    align-items: stretch;
+}
+
+.post-carts-list-row {
+    white-space: nowrap;
+    display: flex;
+    overflow: hidden;
+    justify-content: flex-end;
+}
+
+a, abbr, acronym, address, applet, big, blockquote, body, caption, cite, code, dd, del, dfn, div, dl, dt, em, fieldset, figure, font, form, h1, h2, h3, h4, h5, h6, html, iframe, ins, kbd, label, legend, li, object, ol, p, pre, q, s, samp, small, span, strike, strong, sub, sup, table, tbody, td, tfoot, th, thead, tr, tt, ul, var {
+    border: 0;
+    font-family: inherit;
+    font-size: 100%;
+    font-style: inherit;
+    font-weight: inherit;
+    margin: 0;
+    outline: 0;
+    padding: 0;
+    vertical-align: baseline;
+    word-wrap: break-word;
+    box-sizing: border-box;
+}
+
+

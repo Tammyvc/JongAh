@@ -1,0 +1,95 @@
+{% extends 'base_cat.html' %}
+{% load humanize %}
+
+{% block content %}
+    <div class="archive-row">
+        <div class=" post-1 post-item-1 post-list hidden-line " id="post-list">
+            <ul class="b2_gap ">
+                {% for post in posts %}
+                    <li class="post-list-item item-">
+                        <div class="item-in post-box b2-radius">
+                            <div class="post-module-thumb" style="padding-top:52.631579%">
+                                <a href="{% url 'couple:post_detail' post.slug %}" rel="nofollow" class="thumb-link"></a>
+
+                                </a>
+                                <picture class="picture">
+
+                                    <img class="post-thumb" alt="WordPress 软件应用商店主题 Astore" src="{{ post.image.url }}">
+                                </picture>
+                            </div>
+                            <div class="post-info">
+                                <h2>
+                                    <a href="{% url 'couple:post_detail' post.slug %}">{{ post.title }}</a>
+                                </h2>
+                                <div class="post-excerpt">
+                                    {{ post.desc }}
+                                </div>
+
+                                <div class="post-list-meta-box">
+                                    <div class="post-list-cat  b2-radius">
+                                        <a class="post-list-cat-item b2-radius"
+                                           href="{% url 'couple:category_detail' post.category.slug %}"
+                                           style="color:#607d8b">一半是戏一半是你</a>
+                                    </div>
+                                    <ul class="post-list-meta">
+                                        <li class="post-list-meta-like"><span><i
+                                                class="fa fa-thumbs-o-up"
+                                                aria-hidden="true"></i>{{ post.likes }}</span>
+                                        </li>
+                                        <li class="post-list-meta-comment">
+                                        <span>
+                                            <i class="fa fa-comment" aria-hidden="true"></i>{{ post.comment.count }}
+                                        </span>
+                                        </li>
+                                        <li class="post-list-meta-views"><span><i class="fa fa-eye"
+                                                                                  aria-hidden="true"></i>{{ post.views }}</span>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <div class="list-footer">
+                    <span>
+                            <time class="b2timeago" datetime="2022-04-03 23:15:20" itemprop="datePublished"
+                                  timeago-id="2">{{ post.created_time|natural_time }}</time></span>
+                                </div>
+                            </div>
+                        </div>
+
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+        <div class="b2-pagenav post-nav box b2-radius mg-t">
+            <div class="ajax-pager">
+                <div class="ajax-pagenav">
+                    <div class="btn-group nav-normal post-nav">
+                        <a href="/image-text/half-drama-half-you/?page=1" class="button empty selected disabled">1</a>
+                        <a href="/image-text/half-drama-half-you/?page=2" class="button empty ">2</a>
+                        <label class="pager-center">
+                            <input type="text" value="1" autocomplete="off">
+                        /<span>{{ paginator.num_pages }}页</span>
+                        <button class="b2-color text" style="display: none;">前往</button>
+                    </label></div>
+                    <div class="btn-pager"><a herf="javascript:void(0)" class="button selected empty">❮</a><a
+                            href="https://www.wpdaxue.com/shop/wp-plugins/page/2" class="empty button">❯</a></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <style>
+        .post-item-1 ul.b2_gap > li {
+            width: 25%
+        }
+
+        .post-list-item .item-in .post-info h2 {
+            -webkit-line-clamp: 2;
+        }
+
+        @media screen and (max-width: 720px) {
+            .post-list-item .item-in .post-info h2 {
+                -webkit-line-clamp: 2;
+            }
+        }
+    </style>
+{% endblock %}

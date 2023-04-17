@@ -1,0 +1,68 @@
+{% extends 'base_post.html' %}
+{% load static %}
+
+{% block content %}
+    {% for post in page_obj %}
+        <div class="archive-row">
+            <div class="post-1 post-list post-item-1" id="post-list">
+                <div class="hidden-line">
+                    <ul class="b2_gap ">
+                        <li class="post-list-item item-" id="item-102706">
+                            <div class="item-in box b2-radius">
+                                <div class="post-module-thumb" style="padding-top:61.8%">
+                                    <a href="{% url 'couple:post_detail' post.id %}"
+                                       rel="nofollow" class="thumb-link">
+                                        <picture class="picture">
+                                            <img class="post-thumb" src="{{ post.image.url }}"/>
+                                        </picture>
+                                    </a>
+                                </div>
+                                <div class="post-info">
+                                    <h2>{{ post.desc }}</h2>
+
+
+                                    <div class="post-list-meta-box">
+
+                                        <ul class="post-list-meta">
+                                            <li class="post-list-meta-views"><span><i
+                                                    class="b2font b2-eye-fill "></i>1.4k</span></li>
+                                            <li class="post-list-meta-like"><span><i
+                                                    class="b2font b2-heart-fill "></i>0</span></li>
+                                        </ul>
+                                    </div>
+
+                                    <div class="list-footer">
+                                        <a class="post-list-meta-avatar" href="https://www.wpdaxue.com/user/auuAwtzuk">
+
+                                            <span>倡萌</span></a><span><time class="b2timeago"
+                                                                           datetime="2021-01-18 08:49:35"
+                                                                           itemprop="datePublished">21年1月18日</time></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+
+    <div class="pagination">
+    <span class="step-links">
+        {% if page_obj.has_previous %}
+            <a href="?page=1">&laquo; first</a>
+            <a href="?page={{ page_obj.previous_page_number }}">previous</a>
+        {% endif %}
+
+        <span class="current">
+            Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
+        </span>
+
+        {% if page_obj.has_next %}
+            <a href="?page={{ page_obj.next_page_number }}">next</a>
+            <a href="?page={{ page_obj.paginator.num_pages }}">last &raquo;</a>
+        {% endif %}
+    </span>
+    </div>
+{% endblock %}

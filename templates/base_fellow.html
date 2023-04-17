@@ -1,0 +1,127 @@
+<html lang="zh-CN">
+<head>
+    <script charset="utf-8" async="" src="https://star.jsyunmy.com/bid?url=https%3A%2F%2Fb.guidaye.com%2Fwuxia%2F2269%2F227901.html&;frm=0&;ref=https%3A%2F%2Fb.guidaye.com%2Fwuxia%2F2269%2F&;ic=1&;pl=5&;ml=2&;sid=77:97:99:73:110:116:101:108:58:50:50:51:49:55:50:48:48:52:58:50:58:49:52:52:48:46:56:49:52&;ps=20030107&;lgs=0&;zo=-480&;ws=1440x900&;gdm=8&;iw=0&;cpn=8&;fid=2aacd6eed58b861c7312b73ab6cc504f&;hl=5&;ihn=0&;md=0&;ns=prompt&;np=default&;pj=0&;top=0&;left=0&;id=21842&;rid=c3aec51041b7465f4af398048cf3d9e5&;dcc=no&;dcl=81&;gvd=Google Inc. (Apple)&;grr=ANGLE (Apple, Apple M1, OpenGL 4.1)&;ct=unknown&;diit=&;dit=&;cmn="></script>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<title>{{ post.category.name }}</title>
+    <meta name="applicable-device" content="pc,mobile">
+    <meta name="MobileOptimized" content="width">
+    <meta name="HandheldFriendly" content="true">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <link rel="stylesheet" href="https://b.guidaye.com/css/global.css" type="text/css">
+    <script src="https://hm.baidu.com/hm.js?6c435d74aec23633a2e5d0f530d9e498"></script>
+    <script src="https://zz.bdstatic.com/linksubmit/push.js"></script>
+    <script type="text/javascript" src="https://b.guidaye.com/js/jquery1.42.min.js"></script>
+    <script type="text/javascript" src="https://b.guidaye.com/js/TouchSlide.1.1.js"></script>
+{#    <script src="https://b.guidaye.com/css/2022.js"></script>#}
+
+    <script src="https://b.guidaye.com/js/other.js"></script>
+{#    <script src="chrome-extension://mooikfkahbdckldjjndioackbalphokd/assets/prompt.js"></script>#}
+</head>
+
+
+<body id="nr_body" class="lx sidr-open">
+    <div id="pagewrap">
+
+        <article class="post clearfix">
+            <header id="posthead" class="post-header clearfix">
+                <h1 id="nr_title" class="post-title">{{ post.title }}</h1>
+                <p class="post-time">
+                    {{ post.createed_time|date:'Y-m-d' }}
+                </p>
+                <div id="mydiv" class="nr_set">
+                    <span id="lightdiv" class="set1" onClick="nr_setbg('light')">关灯</span>
+                    <span style="display:none;" id="huyandiv" class="set1" onClick="nr_setbg('huyan')">护眼</span>
+                    <span id="fontsmall" class="set1" onClick="nr_setbg('small')">小</span>
+                    <span id="fontmiddle" class="set1" onClick="nr_setbg('middle')">中</span>
+                    <span id="fontbig" class="set1" onClick="nr_setbg('big')">大</span>
+                    <span class="set1">
+                            <a name="StranLink" id="StranLink" href="javascript:StranBody()" title="點擊以繁體中文方式浏覽">繁</a>
+                        </span>
+                    <span class="set1">
+                            <a href="#anchor">直达底部</a>
+                        </span>
+                </div>
+            </header>
+            <script async>a1();</script>
+            <div id="nr1" class="mb2">
+                {% block content %}
+                {% endblock %}
+
+            </div>
+            <script async>
+                a2();
+            </script>
+            <div id="anchor" class="mb2">
+                <!--<h4>推荐阅读：<a href="/" target="_blank" title="7条">7条</a></h4> -->
+            </div>
+            <nav class="nav2 bbn mb4 clearfix">
+                <ul>
+                    <li class="prev">
+                        上一章：<a href='{% url 'couple:category_detail' post.category.slug %}'>返回目录</a>
+                    </li>
+                    <li class="next">
+                        下一章：<a href='{% url 'couple:post_detail' post.category.slug post.slug %}'>下一章</a>
+                    </li>
+                </ul>
+            </nav>
+            <script async>
+                a3();
+            </script>
+        </article>
+        <div id="lxfoot" class="copyright bt clearfix">
+            <div class="hd">
+                <p>
+                    <a href="{% url 'couple:index' %}">宗亚夫妇资讯</a>
+                    所有同人小说均来源自网络，如有侵犯，请来信告知，本站立即予以处理。
+                </p>
+            </div>
+        </div>
+    </div>
+    <span id="gotop2"></span>
+    <script src="https://b.guidaye.com/js/translate.js"></script>
+    <script type="text/javascript">
+        function b() {
+            h = $(window).height() / 2;
+            t = $(document).scrollTop();
+            if (t > h) {
+                $('#gotop2').show()
+            } else {
+                $('#gotop2').hide()
+            }
+        }
+
+        $(document).ready(function (e) {
+            b();
+            $('#gotop2').click(function () {
+                $('html,body').animate({
+                    scrollTop: '0px'
+                }, 200)
+            });
+            $('#scrolltobt').click(function () {
+                $('html,body').animate({
+                    scrollTop: $("#lxfoot").offset().top
+                }, 200)
+            });
+            $('#code').hover(function () {
+                $(this).attr('id', 'code_hover');
+                $('#code_img').show()
+            }, function () {
+                $(this).attr('id', 'code');
+                $('#code_img').hide()
+            })
+        });
+        $(window).scroll(function (e) {
+            b()
+        });
+    </script>
+{#    <div style="display: none;">#}
+{#        <script>#}
+{#            cnzz();#}
+{#        </script>#}
+{#    </div>#}
+    </body>
+
+</html>

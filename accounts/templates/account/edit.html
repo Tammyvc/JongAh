@@ -1,173 +1,722 @@
-{% extends 'base.html' %}
 {% load static %}
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
 
-{% block content %}
-    <div id="content" class="site-content">
-        <div id="author" class="author wrapper">
-            <div class="box b2-radius author-header">
-                <form id="cover-image" class="mask-wrapper">
-                    {% csrf_token %}
-                    <div class="user-cover-button">
-                        <label class="empty button" for="cover-input">
-                            <i class="fa fa-file-image-o" aria-hidden="true"></i>
-                            <span>上传封面图片</span>
-                        </label>
-                        <input id="cover-input" type="file" class="b2-hidden-always"
-                               accept="image/jpg,image/jpeg,image/png,image/gif">
+    <meta charset="utf-8">
+    <title>JongAhLove</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="keywords" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700;900&display=swap"
+          rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,500;1,600;1,700&display=swap"
+          rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+
+    <link rel="stylesheet" href="../../static/assets/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="../../static/assets/css/jquery-ui.css">
+
+    <link rel="stylesheet" href="../../static/assets/css/jquery.fancybox.min.css">
+
+    <link rel="stylesheet" href="../../static/assets/css/ionicons.min.css">
+
+    <link rel="stylesheet" href="../../static/assets/css/ticker.min.css">
+
+    <link rel="stylesheet" href="../../static/assets/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="../../static/assets/css/owl.theme.default.min.css">
+
+    <link rel="stylesheet" href="../../static/assets/css/nav-style.css">
+    <link rel="stylesheet" href="../../static/assets/fontend/style.css">
+
+
+    <link rel="stylesheet" href="../../static/assets/css/aos.css">
+    <link rel="stylesheet" href="../../static/assets/css/magnific-popup.css">
+
+    <link rel="stylesheet" href="../../static/assets/sliders/slider-1/fonts/pe-icon-7-stroke/css/pe-icon-7-stroke.css">
+
+    <link rel="stylesheet" href="../../static/assets/sliders/slider-1/css/rs6.css">
+
+    <link rel="stylesheet" href="../../static/assets/flat-font/flaticon.css">
+
+    <link rel="stylesheet" href="../../static/assets/css/style.css">
+
+    <link rel="shortcut icon" type="image/png" href="../../static/assets/img/favicon.png">
+</head>
+<body>
+
+<div id="preloader"></div>
+
+
+<header class="header-area">
+    <div class="header-top">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-5 col-4">
+                    <div class="header-top-nav">
+                        <div class="side-ber">
+                            <div class="sidebar-btn">
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                            </div>
+                        </div>
                     </div>
-                </form>
-                <div class="user-panel">
-                    <div style="background-image: url(../../../media/image/users/gf/1ad9decd7e415b5041ca9e09338df138.jpg);"
-                         class="avatar">
-                        <label class="editor-avatar" for="avatar-input">
-                            <i class="b2font b2-image-fill "></i>
-                            <span>修改我的头像</span>
-                        </label>
-                        <input id="avatar-input" type="file" class="b2-hidden-always"
-                               accept="image/jpg,image/jpeg,image/png,image/gif">
+                </div>
+                <div class="col-md-2 col-4">
+                    <div class="aubliy-logo">
+                        <img src="../../static/assets/img/Logo.png" alt="">
                     </div>
-                    <div class="user-panel-info">
-                        <div>
-                            <h1>
-                                <span id="userDisplayName">{{ profile.nickname }}</span>
-                            </h1>
-                            <p>这个人很懒，什么都没有留下！</p>
+                </div>
+                <div class="col-md-5">
+                    <div class="h-social-links">
+                        <ul>
+                            <li><a href=""> <i class="fa fa-qq"></i></a></li>
+                            <li><a href=""> <i class="fa fa-weixin"></i></a></li>
+                            <li><a href=""> <i class="fa fa-weibo"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="aubliy-nav nav-fixed">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-md-12">
+                    <div class="header-banner-content wrapper">
+                        <div class="header-banner-left">
+                            <div class="menu">
+                                <!--导航栏-->
+                                <ul class="clearfix">
+                                    <li class="no-dropdown"><a href="/index"><i class="fa fa-home"></i> 首页</a>
+                                    </li>
+                                    <li><a href="#"><i class="fa fa-file-text" aria-hidden="true"></i> 文章<i
+                                            class="fa fa-chevron-down"></i></a>
+                                        <ul>
+                                            <li class="frist-li">
+                                                <h3>目录</h3>
+                                                <ul>
+                                                    <li><a href="#">我们结婚了</a></li>
+                                                    <li><a href="#">History</a></li>
+                                                    <li><a href="#">Locations</a></li>
+                                                    <li><a href="#">Careers</a></li>
+                                                </ul>
+                                            </li>
+                                            <!--下拉分类-->
+                                            <li>
+                                                <div class="nav-single-blog">
+                                                    <div class="nsb-img">
+                                                        <img src="../../static/assets/img/about/mega4.jpg" alt="">
+                                                    </div>
+                                                    <div class="nsb-text">
+                                                        <span>15 November 2020</span>
+                                                        <p>5 Ways to Bring the Best of Travel</p>
+                                                    </div>
+                                                </div>
+                                                <div class="nav-single-blog">
+                                                    <div class="nsb-img">
+                                                        <img src="../../static/assets/img/about/mega1.jpg" alt="">
+                                                    </div>
+                                                    <div class="nsb-text">
+                                                        <span>15 November 2020</span>
+                                                        <p>Our Complete Guide to the Best Fall</p>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="nav-single-blog">
+                                                    <div class="nsb-img">
+                                                        <img src="../../static/assets/img/about/mega2.jpg" alt="">
+                                                    </div>
+                                                    <div class="nsb-text">
+                                                        <span>15 November 2020</span>
+                                                        <p>Longchamp Le Pliage 21″ Expandable Travel Bag</p>
+                                                    </div>
+                                                </div>
+                                                <div class="nav-single-blog">
+                                                    <div class="nsb-img">
+                                                        <img src="../../static/assets/img/about/mega3.jpg" alt="">
+                                                    </div>
+                                                    <div class="nsb-text">
+                                                        <span>15 November 2020</span>
+                                                        <p>The Wit & Delight Travel Guide</p>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="#"><i class="fa fa-video-camera" aria-hidden="true"></i> 视频<i
+                                            class="fa fa-chevron-down"></i></a>
+                                        <ul>
+                                            <li><a href="blog-post.html">Blog Post 01</a></li>
+                                            <li><a href="blog-post-2.html">Blog Post 02</a></li>
+                                            <li><a href="blog-post-3.html">Blog Post 03</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="#"><i class="fa fa-file-image-o" aria-hidden="true"></i>
+                                        图集<i class="fa fa-chevron-down"></i></a>
+                                        <ul>
+                                            <li><a href="category-1.html">Category 01</a></li>
+                                            <li><a href="category-2.html">Category 02</a></li>
+                                            <li><a href="category-3.html">Category 03</a></li>
+                                            <li><a href="category-4.html">Category 04</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="no-dropdown"><a href="/about"><i class="fa fa-exclamation-circle"
+                                                                                aria-hidden="true"></i>
+                                        关于我<i class="fas"></i></a>
+                                    </li>
+                                    <li class="no-dropdown"><a href="/contact"><i class="fa fa-envelope-open"
+                                                                                  aria-hidden="true"></i>
+                                        联系我<i class="fas"></i></a>
+
+
+
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="header-banner-right">
+                            <div class="top-search mobile-hidden">
+                                <form method="get" action="https://www.wpdaxue.com"
+                                      class="mobile-search-input b2-radius">
+                                    <input type="text" name="s" autocomplete="off" placeholder="请输入关键词"
+                                           class="search-input b2-radius"> <input type="hidden" name="type"
+                                                                                  value="post">
+                                    <button class="search-button-action"><i class="fa fa-search" aria-hidden="true"></i>
+                                    </button>
+                                </form>
+                            </div>
+                            <div class="header-user">
+                                <div class="top-user-info">
+                                    {% if not request.session.is_login %}
+                                        <li id="regis" class="no-dropdown"><a href="/register"><i
+                                                class="fa fa-user-circle"
+                                                aria-hidden="true"></i>
+                                            注册<i class="fas"></i></a>
+                                        <li id="log-in" class="no-dropdown"><a href="/login"><i
+                                                class="fa fa-sign-in"
+                                                aria-hidden="true"></i>
+                                            登录<i class="fas"></i></a>
+                                            {% else %}
+                                        <li class="user-center">
+                                            {######用户个人中心########}
+                                            <div class="top-user-info">
+                                                <div class="user-tools">
+                                                    <div class="top-user-box">
+                                                        {% if not user.profile.photo %}
+                                                            <div id="username"
+                                                                 class="top-user-avatar avatar-parent">
+                                                                <img class="avatar b2-radius"
+                                                                     src="{{ MEDIA_URL }}/image/default/photo/1.png">
+                                                            </div>
+                                                        {% else %}
+                                                            <div id="username"
+                                                                 class="top-user-avatar avatar-parent">
+                                                                <img class="avatar b2-radius"
+                                                                     src="{{ MEDIA_URL }}/{{ user.profile.photo }}">
+                                                            </div>
+                                                        {% endif %}
+                                                        <div id="user-settings" class="top-user-box-drop jt b2-radius show" style="display: none;">
+                                                            <div class="top-user-info-box" v-if="role.user_data">
+                                                                <div class="top-user-info-box-name">
+                                                                    {% if not user.profile.photo %}
+                                                                        <img src="{{ MEDIA_URL }}/image/default/photo/1.png"
+                                                                             class="avatar b2-radius"/>
+                                                                    {% else %}
+                                                                        <img class="avatar b2-radius"
+                                                                             src="{{ user.profile.photo.url }}">
+                                                                    {% endif %}
+                                                                    <div class="top-user-name">
+                                                                        <h3>{{ user.profile.nickname }}</h3>
+                                                                    </div>
+                                                                    <div data-title="退出登录"
+                                                                         class="login-out user-tips">
+                                                                        <a href="/logout/"><i
+                                                                                class="fa fa-sign-out"></i></a>
+                                                                    </div>
+
+                                                                </div>
+                                                                <div class="top-user-info-box-count"
+                                                                     v-if="role.user_data">
+                                                                    <p>
+                                                                        <span>文章</span>
+                                                                        <b></b>
+                                                                    </p>
+                                                                    <p>
+                                                                        <span>评论</span>
+                                                                        <b></b>
+                                                                    </p>
+                                                                    <p>
+                                                                        <span>关注</span>
+                                                                        <b></b>
+                                                                    </p>
+                                                                    <p>
+                                                                        <span>粉丝</span>
+                                                                        <b></b>
+                                                                    </p>
+                                                                    <a href="userData.link" class="link-block"
+                                                                       target="_blank"></a>
+                                                                </div>
+                                                            </div>
+                                                            <ul>
+                                                                {#                                                                <li>#}
+                                                                {#                                                                    <a href="{% url 'accounts:settings' request.session.user_name%}">#}
+                                                                {#                                                                        <i class="fa fa-bullseye" aria-hidden="true"></i>#}
+                                                                {#                                                                        <p>#}
+                                                                {#                                                                            个人中心#}
+                                                                {#                                                                        </p>#}
+                                                                {#                                                                    </a>#}
+                                                                {#                                                                </li>#}
+                                                                <li>
+                                                                    <a href="{% url 'accounts:user_center' request.session.user_name %}">
+                                                                        <i class="fa fa-cog"></i>
+                                                                        <p>
+                                                                            个人中心
+                                                                        </p>
+                                                                    </a>
+                                                                </li>
+                                                                <li>
+                                                                    <a href="{% url 'accounts:logout' %}"
+                                                                       class="log-out">
+                                                                        <i class="fa fa-sign-out"></i>
+                                                                        <p>
+                                                                            退出登录<span
+                                                                                class="top-user-link-des"></span>
+                                                                        </p>
+                                                                    </a>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    {% endif %}
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="author-table mg-t">
-                <div class="author-page-right">
-                    <div class="author-page-right-in box b2-radius">
-                        <div class="user-sidebar">
-                            <div class="user-sidebar-info ">
-                                <a href="https://www.s9h.cn/users/dByABkkjq" class="link-block"></a>
-                                <p>
-                                    <i class="fa fa-address-book" aria-hidden="true"></i>
-                                    概览
-                                </p>
-                                <div class="author-sidebar-down">
-                                    <i class="b2font b2-arrow-right-s-line "></i>
-                                </div>
+        </div>
+    </div>
+</header>
+
+<div class="side-panel hide">
+    <div class="sp-box">
+        <div class="sp-close">
+            <span class="close-sp"><i class="fa fa-times"></i></span>
+        </div>
+        <div class="sp-logo">
+            <a href="index.html">
+            </a>
+        </div>
+        <div class="sp-text">
+            <h1>目录</h1>
+            <div class="sp-catagory">
+                <ul>
+                    <li>文章<span>105</span></li>
+                    <li>视频<span>105</span></li>
+                    <li>图集<span>105</span></li>
+                </ul>
+            </div>
+            <div class="social">
+                <p>通过下列方式联系我</p>
+                <ul>
+                    <li><a href=""><i class="fa fa-qq"></i></a></li>
+                    <li><a href=""><i class="fa fa-weixin"></i></a></li>
+                    <li><a href=""><i class="fa fa-weibo"></i></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+{#{% block content %}#}
+<div id="content" class="site-content">
+    <div id="author" class="author wrapper">
+        <div class="box b2-radius author-header">
+            <div class="mask-wrapper">
+                {% if profile.cover %}
+                    <img id="cover-show" src="{{ user.profile.cover.url }}">
+                {% else %}
+                    <img id="cover-show" src="{{ MEDIA_URL }}image/default/cover/2.jpeg">
+                {% endif %}
+                <div class="user-cover-button">
+                    <label class="empty button" for="cover-input">
+                        <i class="fa fa-file-image-o" aria-hidden="true"></i>
+                        <span>上传封面图片</span>
+                    </label>
+                    <input id="cover-upload" type="file" style="display: none" onchange="uploadcover()">
+                </div>
+            </div>
+            <div class="user-panel">
+                <div class="avatar" id="avatar-show" style="background-image: url(../..{{ user.profile.photo.url }});">
+                    <label class="editor-avatar" for="avatar-input">
+                        <i class="b2font b2-image-fill "></i>
+                        <span>修改我的头像</span>
+                    </label>
+                    <input id="avatar-upload" type="file" style="display: none" onchange="uploadavatar()">
+                </div>
+                <div class="user-panel-info">
+                    <div>
+                        <h1 class="user-nickname">
+                            <span id="userDisplayName">{{ user.profile.nickname }}</span>
+                        </h1>
+                        {% if not user.profile.introduction %}
+                            <p>这个人很懒，什么都没有留下！</p>
+                        {% else %}
+                            <p>{{ user.profile.introduction }}</p>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="author-table mg-t">
+            <div class="author-page-right">
+                <div class="author-page-right-in box b2-radius">
+                    <div class="user-sidebar">
+                        <div class="user-sidebar-info ">
+                            <a href="https://www.s9h.cn/users/dByABkkjq" class="link-block"></a>
+                            <p>
+                                <i class="fa fa-address-book" aria-hidden="true"></i>
+                                概览
+                            </p>
+                            <div class="author-sidebar-down">
+                                <i class="b2font b2-arrow-right-s-line "></i>
                             </div>
                         </div>
-                        <div class="user-sidebar">
-                            <div class="user-sidebar-info ">
-                                <a href="https://www.s9h.cn/users/dByABkkjq/post" class="link-block"></a>
-                                <p>
-                                    <i class="fa fa-retweet" aria-hidden="true"></i>
-                                    发布的
-                                </p>
-                                <div class="author-sidebar-down">
-                                    <i class="b2font b2-arrow-right-s-line "></i>
-                                </div>
+                    </div>
+                    <div class="user-sidebar">
+                        <div class="user-sidebar-info ">
+                            <a href="https://www.s9h.cn/users/dByABkkjq/post" class="link-block"></a>
+                            <p>
+                                <i class="fa fa-retweet" aria-hidden="true"></i>
+                                发布的
+                            </p>
+                            <div class="author-sidebar-down">
+                                <i class="b2font b2-arrow-right-s-line "></i>
                             </div>
                         </div>
-                        <div class="user-sidebar">
-                            <div class="user-sidebar-info ">
-                                <a href="https://www.s9h.cn/users/dByABkkjq/following" class="link-block"></a>
-                                <p>
-                                    <i class="fa fa-wpexplorer" aria-hidden="true"></i>
-                                    关注
-                                </p>
-                                <div class="author-sidebar-down">
-                                    <i class="b2font b2-arrow-right-s-line "></i>
-                                </div>
+                    </div>
+                    <div class="user-sidebar">
+                        <div class="user-sidebar-info ">
+                            <a href="https://www.s9h.cn/users/dByABkkjq/following" class="link-block"></a>
+                            <p>
+                                <i class="fa fa-wpexplorer" aria-hidden="true"></i>
+                                关注
+                            </p>
+                            <div class="author-sidebar-down">
+                                <i class="b2font b2-arrow-right-s-line "></i>
                             </div>
                         </div>
-                        <div class="user-sidebar">
-                            <div class="user-sidebar-info ">
-                                <a href="https://www.s9h.cn/users/dByABkkjq/followers" class="link-block"></a>
-                                <p>
-                                    <i class="fa fa-heart" aria-hidden="true"></i>
-                                    粉丝
-                                </p>
-                                <div class="author-sidebar-down">
-                                    <i class="b2font b2-arrow-right-s-line "></i>
-                                </div>
+                    </div>
+                    <div class="user-sidebar">
+                        <div class="user-sidebar-info ">
+                            <a href="https://www.s9h.cn/users/dByABkkjq/followers" class="link-block"></a>
+                            <p>
+                                <i class="fa fa-heart" aria-hidden="true"></i>
+                                粉丝
+                            </p>
+                            <div class="author-sidebar-down">
+                                <i class="b2font b2-arrow-right-s-line "></i>
                             </div>
                         </div>
-                        <div class="user-sidebar">
-                            <div class="user-sidebar-info ">
-                                <a href="https://www.s9h.cn/users/dByABkkjq/collections" class="link-block"></a>
-                                <p>
-                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                    收藏
-                                </p>
-                                <div class="author-sidebar-down">
-                                    <i class="b2font b2-arrow-right-s-line "></i>
-                                </div>
+                    </div>
+                    <div class="user-sidebar">
+                        <div class="user-sidebar-info ">
+                            <a href="https://www.s9h.cn/users/dByABkkjq/collections" class="link-block"></a>
+                            <p>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                收藏
+                            </p>
+                            <div class="author-sidebar-down">
+                                <i class="b2font b2-arrow-right-s-line "></i>
                             </div>
                         </div>
-                        <div :class="'user-sidebar h0 '+(userData.admin || userData.self ? 'show' : '')" v-cloak>
-                            <div class="user-sidebar-info active">
-                                <a href="https://www.s9h.cn/users/dByABkkjq/settings" class="link-block"></a>
-                                <p>
-                                    <i class="b2font b2-settings-3-line b2-light b2-color "></i>
-                                    设置
-                                </p>
-                                <div class="author-sidebar-down">
-                                    <i class="b2font b2-arrow-right-s-line "></i>
-                                </div>
+                    </div>
+                    <div :class="'user-sidebar h0 '+(userData.admin || userData.self ? 'show' : '')" v-cloak>
+                        <div class="user-sidebar-info active">
+                            <a href="https://www.s9h.cn/users/dByABkkjq/settings" class="link-block"></a>
+                            <p>
+                                <i class="b2font b2-settings-3-line b2-light b2-color "></i>
+                                设置
+                            </p>
+                            <div class="author-sidebar-down">
+                                <i class="b2font b2-arrow-right-s-line "></i>
                             </div>
                         </div>
                     </div>
                 </div>
+            </div>
 
-                <div class="author-page-left">
-                    <div class="author-page">
-                        <form method="post" action="." id="author-edit-page" class="author-edit-page box b2-radius">
+            <div class="author-page-left">
+                <div class="author-page">
+                    <div id="author-edit-page" class="author-edit-page box b2-radius">
+                        <h2>基本资料</h2>
+                        <form action="." method="post">
                             {% csrf_token %}
-                                <h2>基本资料</h2>
                             <ul class="author-edit-list">
                                 <li>
                                     <div class="edit-name">昵称</div>
                                     <div class="edit-item">
-                                        <div class="edit-value" v-if="!show.nickname">
-                                            <input type="text" name="nickname">
+                                        <div class="edit-value">
+                                            <input type="text" name="nickname" maxlength="100"
+                                                   required></p>
                                         </div>
                                     </div>
                                 </li>
                                 <li>
                                     <div class="edit-name">性别</div>
+                                    <select name="sex">
+                                        <option>男</option>
+                                        <option>女</option>
+                                    </select>
+
+                                </li>
+                                <li>
+                                    <div class="edit-name">签名</div>
                                     <div class="edit-item">
-                                        <input class="myforms-3-2" type="text" name="sex">
+                                        <div class="edit-value">
+                                            <input name="introduction" type="text">
+                                        </div>
                                     </div>
                                 </li>
-                        <li>
-                        <div class="edit-name">简介</div>
-                        <div class="edit-item">
-                            <div class="edit-value">
-                                <textarea name='desc'></textarea>
-                            </div>
-                        </div>
-                    </li>
-                    </ul>
-                        <input type="submit" value="提交">
+                            </ul>
+
+                            <input value="提交修改" type="submit">
                         </form>
+
+                        <div class="edit-button">
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-    </div>
-    </div>
+</div>
 
-    <link rel="stylesheet" href="../../static/css/usercenter/style1.css">
-    <link rel="stylesheet" href="../../static/css/usercenter/style2.css">
-    <link rel="stylesheet" href="../../static/css/usercenter/filent.css">
-    <link rel="stylesheet" href="../../static/css/usercenter/dm.css">
+<link rel="stylesheet" href="../../static/css/usercenter/style1.css">
+<link rel="stylesheet" href="../../static/css/usercenter/style2.css">
+<link rel="stylesheet" href="../../static/css/usercenter/filent.css">
+<link rel="stylesheet" href="../../static/css/usercenter/dm.css">
 
-    <script>
-        var cover = document.getElementById('cover-image')
-        var inputElement = document.getElementById('cover-input')
-
-        inputElement.addEventListener("change", function () {
-            var file = this.files[0];
-            var reader = new FileReader();
-            reader.readAsDataURL(file);
-            reader.onload = function (e) {
-                cover.style.backgroundImage = e.target.result
-            }
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
+<script>
+    $(document).ready(function () {
+        {# ready事件，指整个html文档渲染完成以后，自动执行的操作。 #}
+        {# 自动执行什么操作？给img标签绑定click事件。 onclick=""; .addEventLisenter("click", function(){}); $().click(); #}
+        $('#cover-show').click(function () {
+            {# 只要点击Img，就会触发匿名函数的调用。 #}
+            {# 点击图片。触发input的点击事件。 #}
+            $('#cover-upload').click();
         })
-    </script>
-{% endblock %}
+    });
+
+    function uploadcover() {
+        {#alert('你切换图片了');#}
+        {# 主要工作：获取选择的图片内容，读取内容，并将这个图片保存在图像上。 #}
+        {# files: 这个属性就是用来获取input所选择的内容。files[0]就是一个File对象，包含文件的名称、文件的大小、文件的类型等信息。 #}
+        var cover_file = $('#cover-upload')[0].files[0];
+
+        {# 从文件对象img_file中读取图片内容，首先要创建一个文件读取器。 #}
+        var reader_file = new FileReader();
+        {# 开始利用文件读取器从img_file中读取内容 #}
+        reader_file.readAsDataURL(cover_file);
+        {# 等图片读取完成，reader_file有一个读取成功的自动调用的回调事件 #}
+        reader_file.onload = function (ev) {
+            $('#cover-show').attr('src', ev.target.result);
+            {# 页面完成头像修改以后，需要将用户在数据库中保存的头像路径也进行修改。需要在views.py中修改用户的head_img值。 #}
+            {# ajax上传图片文件到django后台：如何使用ajax请求将图片传给django后台的View。 #}
+            var formdata = new FormData();
+            formdata.append('cover_name', cover_file.name);
+            formdata.append('cover_file', cover_file);
+            {# 构造表单对象，类似于<form>标签。 #}
+            {# 如果使用ajax发送POST请求，要求携带的参数里面，必须带有csrf这个随机字符串。和<form>的验证原理是一样的。<input type="hidden" name="csrfmiddlewaretoken" value="nzssW2AKQg4OOth2xmYYCYQuPFEAxhkcNPW3wwLQX6CKm8LkWhusgsowh2IcARSN"> #}
+            formdata.append('csrfmiddlewaretoken', '{{ csrf_token }}');
+            $.ajax({
+                url: '{% url 'accounts:user_cover' user.name %}',
+                type: 'POST',
+                data: formdata,
+                {# processData：默认值是True，含义就是jQuery会对参数进行编码，让其转化为一个查询字符串。如果为FALSE，意思就是不需要jQuery对data: formdata这个数据做任何处理。 #}
+                {# 查询字符串：一般出现在GET请求中，username='123'&password='456' #}
+                processData: false,
+                {# contentType: 该字段指的是此次请求携带的数据是什么累心数据。字段的默认值application/x-www-form-urlencoded。把它的值设置false，目的就是希望不使用默认的值对formdata进行转换。 #}
+                contentType: false,
+                success: function (data, status) {
+                    alert(data);
+                }
+            });
+            {# 1. ajax上传文件(图片、文件、音频)需要使用POST请求； #}
+            {# 2. 需要将传给后台的数据，保存在FormData()表单对象中； #}
+            {# 3. POST请求需要携带cstf，ajax请求和<form>请求携带方式不一样； #}
+            {# 4. ajax上传文件的POST请求，需要指定两个参数：processData: false；contentType: false；#}
+        }
+    }
+</script>
+
+
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
+<script>
+    $(document).ready(function () {
+        {# ready事件，指整个html文档渲染完成以后，自动执行的操作。 #}
+        {# 自动执行什么操作？给img标签绑定click事件。 onclick=""; .addEventLisenter("click", function(){}); $().click(); #}
+        $('.editor-avatar').click(function () {
+            {# 只要点击Img，就会触发匿名函数的调用。 #}
+            {# 点击图片。触发input的点击事件。 #}
+            $('#avatar-upload').click();
+        })
+    });
+
+    function uploadavatar() {
+        {#alert('你切换图片了');#}
+        {# 主要工作：获取选择的图片内容，读取内容，并将这个图片保存在图像上。 #}
+        {# files: 这个属性就是用来获取input所选择的内容。files[0]就是一个File对象，包含文件的名称、文件的大小、文件的类型等信息。 #}
+        var avatar_file = $('#avatar-upload')[0].files[0];
+
+        {# 从文件对象img_file中读取图片内容，首先要创建一个文件读取器。 #}
+        var reader_file = new FileReader();
+        {# 开始利用文件读取器从img_file中读取内容 #}
+        reader_file.readAsDataURL(avatar_file);
+        {# 等图片读取完成，reader_file有一个读取成功的自动调用的回调事件 #}
+        reader_file.onload = function () {
+            $('#avatar-show').css('background-image', "url(" + reader_file.result + ")");
+            {# 页面完成头像修改以后，需要将用户在数据库中保存的头像路径也进行修改。需要在views.py中修改用户的head_img值。 #}
+            {# ajax上传图片文件到django后台：如何使用ajax请求将图片传给django后台的View。 #}
+            var formdata = new FormData();
+            formdata.append('avatar_name', avatar_file.name);
+            formdata.append('avatar_file', avatar_file);
+            {# 构造表单对象，类似于<form>标签。 #}
+            {# 如果使用ajax发送POST请求，要求携带的参数里面，必须带有csrf这个随机字符串。和<form>的验证原理是一样的。<input type="hidden" name="csrfmiddlewaretoken" value="nzssW2AKQg4OOth2xmYYCYQuPFEAxhkcNPW3wwLQX6CKm8LkWhusgsowh2IcARSN"> #}
+            formdata.append('csrfmiddlewaretoken', '{{ csrf_token }}');
+            $.ajax({
+                url: '{% url 'accounts:user_avatar' user.name %}',
+                type: 'POST',
+                data: formdata,
+                {# processData：默认值是True，含义就是jQuery会对参数进行编码，让其转化为一个查询字符串。如果为FALSE，意思就是不需要jQuery对data: formdata这个数据做任何处理。 #}
+                {# 查询字符串：一般出现在GET请求中，username='123'&password='456' #}
+                processData: false,
+                {# contentType: 该字段指的是此次请求携带的数据是什么累心数据。字段的默认值application/x-www-form-urlencoded。把它的值设置false，目的就是希望不使用默认的值对formdata进行转换。 #}
+                contentType: false,
+                success: function (data, status) {
+                    alert(data);
+                }
+            });
+            {# 1. ajax上传文件(图片、文件、音频)需要使用POST请求； #}
+            {# 2. 需要将传给后台的数据，保存在FormData()表单对象中； #}
+            {# 3. POST请求需要携带cstf，ajax请求和<form>请求携带方式不一样； #}
+            {# 4. ajax上传文件的POST请求，需要指定两个参数：processData: false；contentType: false；#}
+        }
+    }
+</script>
+
+<div class="footer-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3">
+                <div class="single-f-area">
+                    <h5>关于本站</h5>
+                    <p class="footer">此网站主要是分享和自整理网络上有关宗亚夫妇两人的电视剧，综艺，照片等等。希望通过本站能有更多的小伙伴认识和喜欢他们。
+                    </p>
+
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="single-f-menu">
+                    <h5>博客</h5>
+                    <ul>
+                        <li class="footer"><a href="{% url 'couple:index' %}">首页</a></li>
+                        <li class="footer"><a href="{% url 'couple:about' %}">关于</a></li>
+                        <li class="footer"><a href="{% url 'couple:contact' %}">联系我</a></li>
+                        <li class="footer"><a href="/contact.html">订阅</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="single-f-menu">
+                    <h5>目录</h5>
+                    <ul>
+                        <li class="footer"><a href="category-1.html">文章</a></li>
+                        <li class="footer"><a href="category-2.html">视频</a></li>
+                        <li class="footer"><a href="category-3.html">图集</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="single-f-menu single-f-menu2">
+                    <h5>订阅</h5>
+                    <p class="footer">宗亚夫妇分享站点</p>
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="E-mail" aria-label="Recipient's username"
+                               aria-describedby="basic-addon2">
+                        <div class="input-group-append">
+                            <span class="input-group-text" id="basic-addon2">订阅</span>
+                        </div>
+                    </div>
+                    <ul>
+                        <li><a href=""><i class="fa fa-qq"></i></a></li>
+                        <li><a href=""><i class="fa fa-weixin"></i></a></li>
+                        <li><a href=""><i class="fa fa-weibo"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<footer>
+    <div class="container">
+        <div class="footer-text">
+            <p>Copyright © 2022-2023 JongAh.Love All Rights Reserved By </p>
+        </div>
+    </div>
+</footer>
+
+
+<script src="../../static/assets/js/jquery-3.6.0.min.js"></script>
+
+<script src="../../static/assets/js/bootstrap.min.js"></script>
+
+<script src="../../static/assets/js/aos.js"></script>
+
+<script src="../../static/assets/js/jquery-ui.js"></script>
+
+<script src="../../static/assets/js/nav-script.js"></script>
+
+<script src="../../static/assets/js/owl.carousel.min.js"></script>
+
+<script src="../../static/assets/sliders/slider-1/js/rbtools.min.js"></script>
+<script src="../../static/assets/sliders/slider-1/js/rs6.min.js"></script>
+<script src="../../static/assets/sliders/slider-1/js/slideractivation.js"></script>
+
+<script src="../../static/assets/js/jquery.fancybox.min.js"></script>
+<script src='../../static/assets/js/jquery.magnific-popup.min.js'></script>
+
+<script src="../../static/assets/js/theme.js"></script>
+
+<script>
+    var user = document.getElementById('username');
+    var userSettings = document.getElementById('user-settings');
+    user.addEventListener("click", function () {
+        if (userSettings.style.display === 'block') {
+            userSettings.style.display = 'none';
+        } else {
+            userSettings.style.display = 'block';
+        }
+
+    });
+</script>
+
+</body>
+
+</html>
+{#{% endblock %}#}
